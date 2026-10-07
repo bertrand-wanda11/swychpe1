@@ -24,8 +24,8 @@
         <div class="footer-col">
           <h4 class="footer-title">Account</h4>
           <ul class="footer-links">
-         <li><router-link to="/login">Login</router-link></li>
-            <li><router-link to="/signup">Sign Up</router-link></li>
+         <li><router-link to="/Login">Login</router-link></li>
+            <li><router-link to="/Started">Sign Up</router-link></li>
             <li><router-link to="/help">Help Center</router-link></li>
           </ul>
         </div>

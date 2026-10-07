@@ -1,9 +1,9 @@
 <template>
   <div class="page-wrapper">
-    <!-- Reusable Navbar -->
+
     <Navbar />
 
-    <!-- Main Content Area -->
+
     <main class="login-section">
       <div class="login-card">
         <div class="card-header">
@@ -47,10 +47,10 @@
       </div>
     </main>
 
-    <!-- White Separator Gap Above Footer -->
+    
     <div class="separator-gap"></div>
 
-    <!-- Reusable Footer -->
+ 
     <Footer />
   </div>
 </template>
@@ -88,11 +88,11 @@ const handleLogin = async () => {
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  background-color: #5c1180;
+  background-color: #7B1FA2;
   box-sizing: border-box;
 }
 
-/* Force components to stretch across full width */
+ 
 .page-wrapper > * {
   width: 100%;
 }
@@ -217,7 +217,7 @@ const handleLogin = async () => {
   width: 100%;
 }
 
-/* Responsive adjustments */
+ 
 @media (max-width: 767px) {
   .login-section {
     padding: 40px 16px;

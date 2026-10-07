@@ -121,14 +121,14 @@ const handleSignup = async () => {
   min-height: 100vh;
   width: 100%;
   background-color: #7B1FA2; 
+  box-sizing: border-box;
 }
 
-.signup-container {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 24px;
+.page-wrapper > :deep(header),
+.page-wrapper > :deep(.navbar-container) {
+  width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto;
   box-sizing: border-box;
 }
 

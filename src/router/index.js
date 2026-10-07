@@ -45,7 +45,7 @@ const router = createRouter({
       component: () => import('../views/SignView.vue')
     },
     {
-      path: '/get-started',
+      path: '/Started',
       name: 'get-started',
       component: () => import('../views/StartedView.vue')
     }

@@ -1,12 +1,11 @@
 <template>
   <div class="page-wrapper">
-  
+    <!-- Reusable Navbar -->
     <Navbar />
 
-
+    <!-- Main Content Area -->
     <main class="signup-container">
       <div class="signup-card">
-      
         <div class="card-header">
           <h1 class="title">Join SwychPe</h1>
           <p class="subtitle">
@@ -14,9 +13,7 @@
           </p>
         </div>
 
-
         <form @submit.prevent="handleSignup" class="signup-form">
-      
           <div class="form-group">
             <label for="fullName">Full Name</label>
             <input
@@ -28,7 +25,6 @@
             />
           </div>
 
-     
           <div class="form-group">
             <label for="email">Email Address</label>
             <input
@@ -40,7 +36,6 @@
             />
           </div>
 
-   
           <div class="form-group">
             <label for="phone">Phone Number</label>
             <input
@@ -52,7 +47,6 @@
             />
           </div>
 
-   
           <div class="form-group">
             <label for="password">Password</label>
             <input
@@ -64,22 +58,23 @@
             />
           </div>
 
-
           <button type="submit" class="btn-signup" :disabled="loading">
             <span v-if="loading">Creating account...</span>
             <span v-else>Sign Up</span>
           </button>
         </form>
 
-    
         <div class="card-footer">
           <span>Already have an account? </span>
-          <router-link to="/Login" class="login-link">Login</router-link>
+          <router-link to="/login" class="login-link">Login</router-link>
         </div>
       </div>
     </main>
 
+    <!-- White Separator Line Above Footer -->
+    <div class="separator-gap"></div>
 
+    <!-- Reusable Footer -->
     <Footer />
   </div>
 </template>
@@ -115,43 +110,47 @@ const handleSignup = async () => {
 </script>
 
 <style scoped>
+/* Page Layout Wrapper */
 .page-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  background-color: #7B1FA2;
+  background-color:  #7B1FA2; /* Deep Purple Theme */
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   box-sizing: border-box;
 }
 
- 
+/* Force Navbar, Main Content, and Footer components to span 100% width */
 .page-wrapper > * {
   width: 100%;
 }
 
+/* Centered Main Form Container */
 .signup-container {
   flex: 1;
   display: flex;
-  align-items: center;      
-  justify-content: center;   
-  padding: 60px 24px;
+  align-items: center;      /* Vertically centers the card */
+  justify-content: center;  /* Horizontally centers the card */
+  padding: 80px 24px;
   width: 100%;
   box-sizing: border-box;
 }
 
+/* White Form Card */
 .signup-card {
   background-color: #ffffff;
   border-radius: 24px;
   padding: 48px 40px;
   width: 100%;
-  max-width: 460px;          
+  max-width: 460px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
   box-sizing: border-box;
 }
 
-
 .card-header {
   margin-bottom: 28px;
+  text-align: left;
 }
 
 .title {
@@ -164,12 +163,11 @@ const handleSignup = async () => {
 }
 
 .subtitle {
-  color: #a5b4fc;
+  color: #9ca3af;
   font-size: 14px;
   line-height: 1.5;
   margin: 0;
 }
-
 
 .signup-form {
   display: flex;
@@ -202,7 +200,7 @@ const handleSignup = async () => {
 
 .form-group input:focus {
   border-color: #7B1FA2;
-  box-shadow: 0 0 0 4px rgba(88, 28, 135, 0.15);
+  box-shadow: 0 0 0 4px rgba(123, 31, 162, 0.15);
 }
 
 .btn-signup {
@@ -220,7 +218,7 @@ const handleSignup = async () => {
 }
 
 .btn-signup:hover:not(:disabled) {
-  background-color:#7B1FA2;
+  background-color: #6a1b8e;
 }
 
 .btn-signup:active:not(:disabled) {
@@ -232,7 +230,6 @@ const handleSignup = async () => {
   cursor: not-allowed;
 }
 
-
 .card-footer {
   margin-top: 24px;
   text-align: center;
@@ -241,7 +238,7 @@ const handleSignup = async () => {
 }
 
 .login-link {
-  color: #581c87;
+  color: #7B1FA2;
   font-weight: 600;
   text-decoration: none;
 }
@@ -250,6 +247,17 @@ const handleSignup = async () => {
   text-decoration: underline;
 }
 
+.separator-gap {
+  height: 24px;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+/* ==========================================================================
+   Full Responsive Breakpoints
+   ========================================================================== */
+
+/* Large Screens & Wide Monitors (1440px and up) */
 @media (min-width: 1440px) {
   .signup-container {
     padding: 100px 32px;
@@ -269,14 +277,14 @@ const handleSignup = async () => {
   }
 }
 
-
+/* Standard Laptops & Desktops (1024px to 1439px) */
 @media (max-width: 1439px) and (min-width: 1024px) {
   .signup-container {
     padding: 70px 24px;
   }
 }
 
-
+/* Tablets & iPad Screen Sizes (768px to 1023px) */
 @media (max-width: 1023px) and (min-width: 768px) {
   .signup-container {
     padding: 60px 24px;
@@ -293,7 +301,7 @@ const handleSignup = async () => {
   }
 }
 
-
+/* Large Mobile Phones (481px to 767px) */
 @media (max-width: 767px) and (min-width: 481px) {
   .signup-container {
     padding: 50px 20px;
@@ -309,7 +317,7 @@ const handleSignup = async () => {
   }
 }
 
-
+/* Small Smartphone Screens (480px and down) */
 @media (max-width: 480px) {
   .signup-container {
     padding: 30px 16px;
@@ -350,7 +358,7 @@ const handleSignup = async () => {
   }
 }
 
-
+/* Mobile Landscape View */
 @media (max-height: 600px) and (orientation: landscape) {
   .signup-container {
     padding: 30px 16px;

@@ -3,7 +3,7 @@
 
     <Navbar />
 
-
+ 
     <main class="login-section">
       <div class="login-card">
         <div class="card-header">
@@ -47,10 +47,9 @@
       </div>
     </main>
 
-    
+   
     <div class="separator-gap"></div>
 
- 
     <Footer />
   </div>
 </template>
@@ -102,7 +101,7 @@ const handleLogin = async () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 24px;
+  padding: 80px 24px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -113,7 +112,7 @@ const handleLogin = async () => {
   padding: 44px 40px;
   width: 100%;
   max-width: 440px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
 }
 
@@ -168,7 +167,7 @@ const handleLogin = async () => {
 
 .form-group input:focus {
   border-color: #5c1180;
-  box-shadow: 0 0 0 3px rgba(92, 17, 128, 0.1);
+  box-shadow: 0 0 0 3px rgba(92, 17, 128, 0.12);
 }
 
 .btn-submit {
@@ -187,6 +186,10 @@ const handleLogin = async () => {
 
 .btn-submit:hover:not(:disabled) {
   background-color: #4a0d68;
+}
+
+.btn-submit:active:not(:disabled) {
+  transform: scale(0.99);
 }
 
 .btn-submit:disabled {
@@ -218,18 +221,107 @@ const handleLogin = async () => {
 }
 
  
-@media (max-width: 767px) {
+@media (min-width: 1440px) {
   .login-section {
-    padding: 40px 16px;
+    padding: 100px 32px;
   }
 
   .login-card {
-    padding: 32px 24px;
+    max-width: 480px;
+    padding: 52px 48px;
+  }
+
+  .title {
+    font-size: 2.1rem;
+  }
+}
+
+ 
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .login-section {
+    padding: 70px 24px;
+  }
+}
+
+ 
+@media (max-width: 1023px) and (min-width: 768px) {
+  .login-section {
+    padding: 60px 24px;
+  }
+
+  .login-card {
+    max-width: 420px;
+    padding: 38px 32px;
+  }
+
+  .title {
+    font-size: 1.7rem;
+  }
+}
+ 
+ 
+@media (max-width: 767px) and (min-width: 481px) {
+  .login-section {
+    padding: 45px 20px;
+  }
+
+  .login-card {
+    padding: 34px 26px;
     border-radius: 16px;
   }
 
   .title {
-    font-size: 1.5rem;
+    font-size: 1.55rem;
+  }
+}
+
+ 
+@media (max-width: 480px) {
+  .login-section {
+    padding: 30px 16px;
+  }
+
+  .login-card {
+    padding: 28px 18px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-header {
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.82rem;
+  }
+
+  .form-group input {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .btn-submit {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}
+
+ 
+@media (max-height: 600px) and (orientation: landscape) {
+  .login-section {
+    padding: 24px 16px;
+  }
+
+  .login-card {
+    padding: 24px 20px;
+  }
+
+  .card-header {
+    margin-bottom: 16px;
   }
 }
 </style>

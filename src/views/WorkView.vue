@@ -1,9 +1,9 @@
 <template>
   <div class="page-wrapper">
-    <!-- Reusable Navbar -->
+ 
     <Navbar />
 
-    <!-- Hero Header Banner -->
+ 
     <section class="hero-section">
       <div class="hero-container">
         <h1 class="hero-title">How It Works</h1>
@@ -13,7 +13,7 @@
       </div>
     </section>
 
-    <!-- The Process (4-Step Cards) -->
+    
     <section class="process-section">
       <div class="process-container">
         <div class="section-header">
@@ -31,7 +31,7 @@
       </div>
     </section>
 
-    <!-- Cash in Hand Feature Card Section -->
+    
     <section class="feature-section">
       <div class="feature-container">
         <div class="feature-card-wrapper">
@@ -58,8 +58,7 @@
         </div>
       </div>
     </section>
-
-    <!-- Supported Countries Section -->
+ 
     <section class="countries-section">
       <div class="countries-container">
         <h2 class="countries-title">Supported Countries</h2>
@@ -77,7 +76,7 @@
       </div>
     </section>
 
-    <!-- CTA Banner Section -->
+     
     <section class="cta-banner-section">
       <div class="cta-container">
         <h2 class="cta-title">It's that easy!</h2>
@@ -86,7 +85,7 @@
       </div>
     </section>
 
-    <!-- Reusable Footer -->
+    
     <Footer />
   </div>
 </template>
@@ -121,13 +120,13 @@ const steps = ref([
 </script>
 
 <style scoped>
-/* Page Layout Wrapper */
+ 
 .page-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  background-color: #5c1180; /* Purple background for header */
+  background-color: #5c1180;  
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   box-sizing: border-box;
 }
@@ -136,7 +135,7 @@ const steps = ref([
   width: 100%;
 }
 
-/* Hero Section */
+ 
 .hero-section {
   background-color: #5c1180;
   padding: 60px 24px 70px 24px;
@@ -165,7 +164,7 @@ const steps = ref([
   font-weight: 500;
 }
 
-/* Process Section */
+ 
 .process-section {
   background-color: #ffffff;
   padding: 60px 24px 40px 24px;
@@ -247,7 +246,7 @@ const steps = ref([
   margin: 0;
 }
 
-/* Feature Card Section */
+ 
 .feature-section {
   background-color: #ffffff;
   padding: 40px 24px 60px 24px;
@@ -337,7 +336,7 @@ const steps = ref([
   border-radius: 999px;
 }
 
-/* Supported Countries Section */
+ 
 .countries-section {
   background-color: #ffffff;
   padding: 20px 24px 70px 24px;
@@ -383,7 +382,7 @@ const steps = ref([
   background-color: #e9d5ff;
 }
 
-/* CTA Banner Section */
+ 
 .cta-banner-section {
   background-color: #5c1180;
   padding: 70px 24px;
@@ -427,11 +426,7 @@ const steps = ref([
   background-color: #f8fafc;
 }
 
-/* ==========================================================================
-   Full Responsive Media Queries
-   ========================================================================== */
-
-/* Large Desktops (1440px and up) */
+ 
 @media (min-width: 1440px) {
   .hero-section {
     padding: 80px 32px 90px 32px;
@@ -446,7 +441,7 @@ const steps = ref([
   }
 }
 
-/* Tablets & Small Laptops (768px to 1023px) */
+ 
 @media (max-width: 1023px) and (min-width: 768px) {
   .steps-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -462,8 +457,7 @@ const steps = ref([
   }
 }
 
-/* Mobile Devices (Under 768px) */
-@media (max-width: 767px) {
+ @media (max-width: 767px) {
   .hero-section {
     padding: 45px 18px 50px 18px;
   }
@@ -500,8 +494,7 @@ const steps = ref([
     font-size: 1.6rem;
   }
 }
-
-/* Small Smartphone Screens (480px and down) */
+ 
 @media (max-width: 480px) {
   .hero-title {
     font-size: 1.7rem;

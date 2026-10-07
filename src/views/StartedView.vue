@@ -1,8 +1,373 @@
 <template>
-  <div class="work-view">
-    <h1>Our Work</h1>
+  <div class="page-wrapper">
+    <!-- Navbar Component -->
+    <Navbar />
+
+    <!-- Main Signup Section -->
+    <main class="signup-container">
+      <div class="signup-card">
+        <!-- Header -->
+        <div class="card-header">
+          <h1 class="title">Join SwychPe</h1>
+          <p class="subtitle">
+            Create your account and start sending money across borders today.
+          </p>
+        </div>
+
+        <!-- Signup Form -->
+        <form @submit.prevent="handleSignup" class="signup-form">
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input
+              id="fullName"
+              v-model="form.fullName"
+              type="text"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <!-- Email Address -->
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              id="email"
+              v-model="form.email"
+              type="email"
+              placeholder="name@example.com"
+              required
+            />
+          </div>
+
+          <!-- Phone Number -->
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input
+              id="phone"
+              v-model="form.phone"
+              type="tel"
+              placeholder="+1 234 567 8900"
+              required
+            />
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              id="password"
+              v-model="form.password"
+              type="password"
+              placeholder="Create a strong password"
+              required
+            />
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-signup" :disabled="loading">
+            <span v-if="loading">Creating account...</span>
+            <span v-else>Sign Up</span>
+          </button>
+        </form>
+
+        <!-- Card Footer Link -->
+        <div class="card-footer">
+          <span>Already have an account? </span>
+          <router-link to="/login" class="login-link">Login</router-link>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer Component -->
+    <Footer />
   </div>
 </template>
 
 <script setup>
+import { ref, reactive } from 'vue'
+import { useRouter } from 'vue-router'
+import Navbar from '@/components/Navbar.vue'
+import Footer from '@/components/Footer.vue'
+
+const router = useRouter()
+const loading = ref(false)
+
+const form = reactive({
+  fullName: '',
+  email: '',
+  phone: '',
+  password: ''
+})
+
+const handleSignup = async () => {
+  loading.value = true
+  try {
+    console.log('Registering user:', form)
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+    router.push('/login')
+  } catch (error) {
+    console.error('Signup failed:', error)
+  } finally {
+    loading.value = false
+  }
+}
 </script>
+
+<style scoped>
+/* Base Page Structure */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.signup-container {
+  flex: 1;
+  background-color: #581c87; /* Deep SwychPe Purple */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  box-sizing: border-box;
+}
+
+/* Base Card Styles */
+.signup-card {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* Header Text */
+.card-header {
+  margin-bottom: 28px;
+}
+
+.title {
+  color: #4c1d95;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  color: #a5b4fc;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Form Styles */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 13px 16px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #581c87;
+  box-shadow: 0 0 0 4px rgba(88, 28, 135, 0.15);
+}
+
+/* CTA Pill Button */
+.btn-signup {
+  margin-top: 8px;
+  width: 100%;
+  background-color: #581c87;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  padding: 15px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-signup:hover:not(:disabled) {
+  background-color: #4c1d95;
+}
+
+.btn-signup:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn-signup:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+/* Card Footer */
+.card-footer {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.login-link {
+  color: #581c87;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Comprehensive Device Responsiveness (Breakpoints)
+   ========================================================================== */
+
+/* 1. Large Desktops & Ultra-Wide Monitors (1440px+) */
+@media (min-width: 1440px) {
+  .signup-container {
+    padding: 100px 32px;
+  }
+
+  .signup-card {
+    max-width: 500px;
+    padding: 56px 48px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+}
+
+/* 2. Laptops & Small Desktops (1024px to 1439px) */
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .signup-container {
+    padding: 70px 24px;
+  }
+}
+
+/* 3. Tablets & iPads (768px to 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .signup-container {
+    padding: 60px 24px;
+  }
+
+  .signup-card {
+    max-width: 440px;
+    padding: 40px 32px;
+    border-radius: 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+}
+
+/* 4. Large Mobile Devices & Phablets (481px to 767px) */
+@media (max-width: 767px) and (min-width: 481px) {
+  .signup-container {
+    padding: 50px 20px;
+  }
+
+  .signup-card {
+    padding: 36px 28px;
+    border-radius: 18px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+}
+
+/* 5. Small Mobile Phones (480px and below) */
+@media (max-width: 480px) {
+  .signup-container {
+    padding: 30px 16px;
+  }
+
+  .signup-card {
+    padding: 28px 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+  }
+
+  .card-header {
+    margin-bottom: 22px;
+  }
+
+  .title {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .signup-form {
+    gap: 16px;
+  }
+
+  .form-group input {
+    padding: 11px 14px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  .btn-signup {
+    padding: 13px 20px;
+    font-size: 14px;
+  }
+}
+
+/* 6. Mobile Devices in Landscape Orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+  .signup-container {
+    padding: 30px 16px;
+  }
+
+  .signup-card {
+    padding: 24px 20px;
+  }
+
+  .card-header {
+    margin-bottom: 16px;
+  }
+
+  .signup-form {
+    gap: 12px;
+  }
+}
+</style>

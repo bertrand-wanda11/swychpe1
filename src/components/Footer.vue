@@ -26,7 +26,7 @@
           <ul class="footer-links">
          <li><router-link to="/Login">Login</router-link></li>
             <li><router-link to="/Started">Sign Up</router-link></li>
-            <li><router-link to="/help">Help Center</router-link></li>
+            <li><router-link to="/faq">Help Center</router-link></li>
           </ul>
         </div>
 

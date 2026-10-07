@@ -27,7 +27,7 @@
             <button class="btn-secondary-lg">Learn More</button>
 
             <div class="cube-svg-wrapper cube-cta-inline">
-              <svg width="34" height="34" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M50 10 L85 30 L85 70 L50 90 L15 70 L15 30 Z" stroke="#E1BEE7" stroke-width="2.5" opacity="0.85"/>
                 <path d="M50 10 L50 50 L85 30 M50 50 L15 30 M50 50 L50 90" stroke="#E1BEE7" stroke-width="2.5" opacity="0.85"/>
               </svg>
@@ -38,7 +38,7 @@
      
         <div class="hero-visual-column">
           <div class="cube-svg-wrapper cube-visual-right">
-            <svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M50 10 L85 30 L85 70 L50 90 L15 70 L15 30 Z" stroke="#E1BEE7" stroke-width="2.5" opacity="0.8"/>
               <path d="M50 10 L50 50 L85 30 M50 50 L15 30 M50 50 L50 90" stroke="#E1BEE7" stroke-width="2.5" opacity="0.8"/>
             </svg>

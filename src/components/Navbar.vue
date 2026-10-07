@@ -1,15 +1,14 @@
 <template>
   <header class="navbar-container">
-    <div class="logo-area">
-      <div class="cube-svg-wrapper cube-logo">
-        <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 10 L85 30 L85 70 L50 90 L15 70 L15 30 Z" stroke="#E1BEE7" stroke-width="3" opacity="0.9"/>
-          <path d="M50 10 L50 50 L85 30 M50 50 L15 30 M50 50 L50 90" stroke="#E1BEE7" stroke-width="3" opacity="0.9"/>
-        </svg>
-      </div>
-      <span class="brand-name">SwychPe</span>
-    </div>
-
+   <router-link to="/" class="logo-area">
+  <div class="cube-svg-wrapper cube-logo">
+    <svg width="34" height="34" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 10 L85 30 L85 70 L50 90 L15 70 L15 30 Z" stroke="#E1BEE7" stroke-width="3" opacity="0.9"/>
+      <path d="M50 10 L50 50 L85 30 M50 50 L15 30 M50 50 L50 90" stroke="#E1BEE7" stroke-width="3" opacity="0.9"/>
+    </svg>
+  </div>
+  <span class="brand-name">SwychPe</span>
+</router-link>
 
    <nav class="nav-links desktop-only">
       <router-link to="/" class="nav-item">Home</router-link>
@@ -67,8 +66,8 @@ const isMobileMenuOpen = ref(false)
 
 }
 
-.logo-area { display: flex; align-items: center; font-size: 1.6rem; font-weight: 800; color: #ffffff; }
-
+.logo-area { display: flex; align-items: center; font-size: 1.6rem; font-weight: 800; color: #ffffff;  text-decoration: none; }
+ 
 .cube-svg-wrapper {
   display: inline-flex;
   align-items: center;

@@ -19,6 +19,7 @@
       <router-link to="/faq" class="nav-item">FAQ</router-link>
     </nav>
 
+    
     <div class="nav-actions">
   <router-link to="/Login" class="btn-login desktop-only">Login</router-link>
  <router-link to="/Started" class="btn-get-started">Get Started</router-link>

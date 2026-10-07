@@ -26,7 +26,7 @@
    
       <button class="hamburger-btn" @click="isMobileMenuOpen = !isMobileMenuOpen" aria-label="Toggle navigation">
         <span v-if="!isMobileMenuOpen">☰</span>
-        <span v-else>✕</span>
+        <span v-else>✕</span> 
       </button>
     </div>
 

@@ -120,11 +120,11 @@ const handleSignup = async () => {
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
+  background-color: #7B1FA2; 
 }
 
 .signup-container {
   flex: 1;
-  background-color: #7B1FA2;
   display: flex;
   align-items: center;
   justify-content: center;

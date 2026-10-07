@@ -87,8 +87,10 @@ const isMobileMenuOpen = ref(false)
 .nav-item:hover, .nav-item.active { color: #ffffff; }
 .nav-actions { display: flex; align-items: center; gap: 1rem; }
 
-.btn-login { background: transparent; border: none; color: #ffffff; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; padding: 0.6rem 1.2rem; }
-.btn-get-started { background: #ffffff; color: #180327; border: none; border-radius: 30px; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; padding: 0.7rem 1.6rem; cursor: pointer; }
+.btn-login { background: transparent; border: none; color: #ffffff; font-family: 'Montserrat',
+ sans-serif; text-decoration: none;font-size: 0.95rem; font-weight: 600; cursor: pointer; padding: 0.6rem 1.2rem; }
+.btn-get-started { background: #ffffff; color: #180327; border: none; border-radius: 30px;
+ font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; padding: 0.7rem 1.6rem; cursor: pointer;text-decoration: none; }
 
 .hamburger-btn {
   display: none;

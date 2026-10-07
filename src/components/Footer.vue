@@ -54,7 +54,7 @@
 <style scoped>
 .footer-wrapper {
   width: 100%;
-  background-color: #3b0754;
+  background-color:  #7B1FA2;
   color: #ffffff;
   padding: 5rem 0 2.5rem 0;
   box-sizing: border-box;

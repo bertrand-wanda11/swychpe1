@@ -37,7 +37,7 @@
         <div class="feature-card-wrapper">
           <div class="feature-image-col">
             <img 
-              src="@/assets/images/download (5).jpeg" 
+              src="@/assets/images/image.png" 
               alt="Cash withdrawal at ATM" 
               class="feature-img"
             />

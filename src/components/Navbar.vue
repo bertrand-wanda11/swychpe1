@@ -21,8 +21,8 @@
 
     
     <div class="nav-actions">
-  <router-link to="/Login" class="btn-login desktop-only">Login</router-link>
- <router-link to="/Started" class="btn-get-started">Get Started</router-link>
+  <router-link to="/login" class="btn-login desktop-only">Login</router-link>
+ <router-link to="/started" class="btn-get-started">Get Started</router-link>
 
    
       <button class="hamburger-btn" @click="isMobileMenuOpen = !isMobileMenuOpen" aria-label="Toggle navigation">

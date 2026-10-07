@@ -2,7 +2,7 @@
   <div class="page-wrapper">
     <Navbar />
 
-    <!-- Purple Hero Header Section -->
+ 
     <section class="hero-section">
       <div class="hero-container">
         <h1 class="hero-title">Frequently Asked Questions</h1>
@@ -10,7 +10,7 @@
       </div>
     </section>
 
-    <!-- White FAQ Accordion Section -->
+     
     <main class="faq-section">
       <div class="faq-container">
         <div 
@@ -36,7 +36,7 @@
       </div>
     </main>
 
-    <!-- Reusable Footer -->
+    
     <Footer />
   </div>
 </template>
@@ -46,7 +46,7 @@ import { ref } from 'vue'
 import Navbar from '../components/Navbar.vue'
 import Footer from '../components/Footer.vue'
 
-// Index of currently open FAQ item (default open first item)
+ 
 const openIndex = ref(0)
 
 const toggleFaq = (index) => {
@@ -91,7 +91,7 @@ const faqs = ref([
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  background-color: #5c1180; /* Ensures navbar background matches header purple */
+  background-color:  #7B1FA2; 
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   box-sizing: border-box;
 }
@@ -99,10 +99,9 @@ const faqs = ref([
 .page-wrapper > * {
   width: 100%;
 }
-
-/* Hero Purple Section */
+ 
 .hero-section {
-  background-color: #5c1180; /* Deep Purple */
+  background-color:  #7B1FA2; 
   padding: 70px 24px;
   text-align: left;
   box-sizing: border-box;
@@ -131,7 +130,7 @@ const faqs = ref([
   margin: 0;
 }
 
-/* White FAQ Accordion Container */
+ 
 .faq-section {
   flex: 1;
   background-color: #ffffff;
@@ -140,14 +139,13 @@ const faqs = ref([
 }
 
 .faq-container {
-  max-width: 680px; /* Centered narrow accordion list */
+  max-width: 680px; 
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-
-/* Individual FAQ Card Item */
+ 
 .faq-card {
   border: 1px solid #e2e8f0;
   border-radius: 12px;
@@ -179,7 +177,7 @@ const faqs = ref([
 
 .arrow-icon {
   font-size: 0.65rem;
-  color: #5c1180;
+  color:  #7B1FA2;
   transition: transform 0.25s ease;
 }
 
@@ -194,10 +192,9 @@ const faqs = ref([
 .question-text {
   font-size: 0.95rem;
   font-weight: 700;
-  color: #5c1180;
+  color: #7B1FA2;
 }
-
-/* Answer Body */
+ 
 .faq-answer {
   padding: 0 20px 18px 40px;
   color: #64748b;
@@ -208,12 +205,7 @@ const faqs = ref([
 .faq-answer p {
   margin: 0;
 }
-
-/* ==========================================================================
-   Full Responsive Media Queries
-   ========================================================================== */
-
-/* Large Screens (1440px and up) */
+ 
 @media (min-width: 1440px) {
   .hero-section {
     padding: 90px 32px;
@@ -228,7 +220,7 @@ const faqs = ref([
   }
 }
 
-/* Tablets and Medium Devices (768px to 1023px) */
+ 
 @media (max-width: 1023px) and (min-width: 768px) {
   .hero-section {
     padding: 60px 24px;
@@ -243,7 +235,7 @@ const faqs = ref([
   }
 }
 
-/* Mobile Devices (Under 768px) */
+ 
 @media (max-width: 767px) {
   .hero-section {
     padding: 45px 18px;
@@ -277,7 +269,7 @@ const faqs = ref([
   }
 }
 
-/* Small Smartphone Screens (480px and down) */
+ 
 @media (max-width: 480px) {
   .hero-section {
     padding: 35px 16px;

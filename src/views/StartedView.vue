@@ -1,12 +1,12 @@
 <template>
   <div class="page-wrapper">
-    <!-- Navbar Component -->
+  
     <Navbar />
 
-    <!-- Main Signup Section -->
+
     <main class="signup-container">
       <div class="signup-card">
-        <!-- Header -->
+      
         <div class="card-header">
           <h1 class="title">Join SwychPe</h1>
           <p class="subtitle">
@@ -14,9 +14,9 @@
           </p>
         </div>
 
-        <!-- Signup Form -->
+
         <form @submit.prevent="handleSignup" class="signup-form">
-          <!-- Full Name -->
+      
           <div class="form-group">
             <label for="fullName">Full Name</label>
             <input
@@ -28,7 +28,7 @@
             />
           </div>
 
-          <!-- Email Address -->
+     
           <div class="form-group">
             <label for="email">Email Address</label>
             <input
@@ -40,7 +40,7 @@
             />
           </div>
 
-          <!-- Phone Number -->
+   
           <div class="form-group">
             <label for="phone">Phone Number</label>
             <input
@@ -52,7 +52,7 @@
             />
           </div>
 
-          <!-- Password -->
+   
           <div class="form-group">
             <label for="password">Password</label>
             <input
@@ -64,14 +64,14 @@
             />
           </div>
 
-          <!-- Submit Button -->
+
           <button type="submit" class="btn-signup" :disabled="loading">
             <span v-if="loading">Creating account...</span>
             <span v-else>Sign Up</span>
           </button>
         </form>
 
-        <!-- Card Footer Link -->
+    
         <div class="card-footer">
           <span>Already have an account? </span>
           <router-link to="/login" class="login-link">Login</router-link>
@@ -79,7 +79,7 @@
       </div>
     </main>
 
-    <!-- Footer Component -->
+
     <Footer />
   </div>
 </template>
@@ -87,8 +87,8 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import { useRouter } from 'vue-router'
-import Navbar from '@/components/Navbar.vue'
-import Footer from '@/components/Footer.vue'
+import Navbar from '../components/Navbar.vue'
+import Footer from '../components/Footer.vue'
 
 const router = useRouter()
 const loading = ref(false)
@@ -115,7 +115,6 @@ const handleSignup = async () => {
 </script>
 
 <style scoped>
-/* Base Page Structure */
 .page-wrapper {
   display: flex;
   flex-direction: column;
@@ -125,7 +124,7 @@ const handleSignup = async () => {
 
 .signup-container {
   flex: 1;
-  background-color: #581c87; /* Deep SwychPe Purple */
+  background-color: #7B1FA2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,7 +132,7 @@ const handleSignup = async () => {
   box-sizing: border-box;
 }
 
-/* Base Card Styles */
+
 .signup-card {
   background-color: #ffffff;
   border-radius: 24px;
@@ -145,13 +144,13 @@ const handleSignup = async () => {
   transition: all 0.3s ease;
 }
 
-/* Header Text */
+
 .card-header {
   margin-bottom: 28px;
 }
 
 .title {
-  color: #4c1d95;
+  color: #7B1FA2;
   font-size: 30px;
   font-weight: 700;
   margin: 0 0 10px 0;
@@ -166,7 +165,7 @@ const handleSignup = async () => {
   margin: 0;
 }
 
-/* Form Styles */
+
 .signup-form {
   display: flex;
   flex-direction: column;
@@ -197,15 +196,14 @@ const handleSignup = async () => {
 }
 
 .form-group input:focus {
-  border-color: #581c87;
+  border-color: #7B1FA2;
   box-shadow: 0 0 0 4px rgba(88, 28, 135, 0.15);
 }
 
-/* CTA Pill Button */
 .btn-signup {
   margin-top: 8px;
   width: 100%;
-  background-color: #581c87;
+  background-color: #7B1FA2;
   color: #ffffff;
   border: none;
   border-radius: 9999px;
@@ -217,7 +215,7 @@ const handleSignup = async () => {
 }
 
 .btn-signup:hover:not(:disabled) {
-  background-color: #4c1d95;
+  background-color:#7B1FA2;
 }
 
 .btn-signup:active:not(:disabled) {
@@ -229,7 +227,7 @@ const handleSignup = async () => {
   cursor: not-allowed;
 }
 
-/* Card Footer */
+
 .card-footer {
   margin-top: 24px;
   text-align: center;
@@ -247,11 +245,6 @@ const handleSignup = async () => {
   text-decoration: underline;
 }
 
-/* ==========================================================================
-   Comprehensive Device Responsiveness (Breakpoints)
-   ========================================================================== */
-
-/* 1. Large Desktops & Ultra-Wide Monitors (1440px+) */
 @media (min-width: 1440px) {
   .signup-container {
     padding: 100px 32px;
@@ -271,14 +264,14 @@ const handleSignup = async () => {
   }
 }
 
-/* 2. Laptops & Small Desktops (1024px to 1439px) */
+
 @media (max-width: 1439px) and (min-width: 1024px) {
   .signup-container {
     padding: 70px 24px;
   }
 }
 
-/* 3. Tablets & iPads (768px to 1023px) */
+
 @media (max-width: 1023px) and (min-width: 768px) {
   .signup-container {
     padding: 60px 24px;
@@ -295,7 +288,7 @@ const handleSignup = async () => {
   }
 }
 
-/* 4. Large Mobile Devices & Phablets (481px to 767px) */
+
 @media (max-width: 767px) and (min-width: 481px) {
   .signup-container {
     padding: 50px 20px;
@@ -311,7 +304,7 @@ const handleSignup = async () => {
   }
 }
 
-/* 5. Small Mobile Phones (480px and below) */
+
 @media (max-width: 480px) {
   .signup-container {
     padding: 30px 16px;
@@ -352,7 +345,7 @@ const handleSignup = async () => {
   }
 }
 
-/* 6. Mobile Devices in Landscape Orientation */
+
 @media (max-height: 600px) and (orientation: landscape) {
   .signup-container {
     padding: 30px 16px;

@@ -106,7 +106,7 @@ import Navbar from '../components/Navbar.vue'
 import Footer from '../components/Footer.vue'
 
  
-import leader1 from '@/assets/images/download (3).jpeg'
+import leader1 from '@/assets/images/tete.png'
 import leader2 from '@/assets/images/download (4).jpeg'
 import leader3 from '@/assets/images/download (5).jpeg'
 

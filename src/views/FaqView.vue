@@ -1,6 +1,5 @@
 <template>
   <div class="page-wrapper">
-    <!-- Reusable Navbar -->
     <Navbar />
 
     <!-- Purple Hero Header Section -->
@@ -87,13 +86,12 @@ const faqs = ref([
 </script>
 
 <style scoped>
-/* Base Layout Structure */
 .page-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #5c1180; /* Ensures navbar background matches header purple */
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   box-sizing: border-box;
 }

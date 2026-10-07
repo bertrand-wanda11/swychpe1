@@ -57,13 +57,14 @@ const isMobileMenuOpen = ref(false)
 .navbar-container {
   max-width: 1280px;
   margin: 0 auto 3rem auto;
-  padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
   z-index: 20;
   box-sizing: border-box;
+  padding: 2rem 2rem 1.25rem 2rem; 
+
 }
 
 .logo-area { display: flex; align-items: center; font-size: 1.6rem; font-weight: 800; color: #ffffff; }

@@ -74,7 +74,7 @@
     
         <div class="card-footer">
           <span>Already have an account? </span>
-          <router-link to="/login" class="login-link">Login</router-link>
+          <router-link to="/Login" class="login-link">Login</router-link>
         </div>
       </div>
     </main>

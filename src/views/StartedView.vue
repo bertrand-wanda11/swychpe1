@@ -120,28 +120,29 @@ const handleSignup = async () => {
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  background-color: #7B1FA2; 
+  background-color: #7B1FA2;
   box-sizing: border-box;
 }
 
-.page-wrapper > :deep(header),
-.page-wrapper > :deep(.navbar-container) {
+.signup-container {
+  flex: 1;
+  display: flex;
+  align-items: center;      
+  justify-content: center;  
+  padding: 60px 24px;
   width: 100%;
-  max-width: 1200px; 
-  margin: 0 auto;
   box-sizing: border-box;
 }
-
 
 .signup-card {
   background-color: #ffffff;
   border-radius: 24px;
   padding: 48px 40px;
   width: 100%;
-  max-width: 460px;
+  max-width: 460px;          
+  margin: 0 auto;           
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
   box-sizing: border-box;
-  transition: all 0.3s ease;
 }
 
 

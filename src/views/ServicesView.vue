@@ -1,9 +1,8 @@
 <template>
   <div class="page-wrapper">
-    <!-- Reusable Navbar -->
+     
     <Navbar />
-
-    <!-- Hero Header Banner -->
+ 
     <section class="hero-section">
       <div class="hero-container">
         <h1 class="hero-title">Our Services</h1>
@@ -11,7 +10,7 @@
       </div>
     </section>
 
-    <!-- Services Grid Section -->
+   
     <section class="services-grid-section">
       <div class="services-container">
         <div class="services-grid">
@@ -22,8 +21,7 @@
         </div>
       </div>
     </section>
-
-    <!-- Powerful Tools Business Feature Section -->
+ 
     <section class="business-feature-section">
       <div class="business-container">
         <div class="feature-card-wrapper">
@@ -51,7 +49,7 @@
       </div>
     </section>
 
-    <!-- CTA Banner Section -->
+    
     <section class="cta-banner-section">
       <div class="cta-container">
         <h2 class="cta-title">Ready to get started?</h2>
@@ -60,7 +58,7 @@
       </div>
     </section>
 
-    <!-- Reusable Footer -->
+    
     <Footer />
   </div>
 </template>
@@ -86,13 +84,12 @@ const services = ref([
 </script>
 
 <style scoped>
-/* Page Layout Wrapper */
 .page-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  background-color: #5c1180; /* Navbar area purple background */
+  background-color: #5c1180;  
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   box-sizing: border-box;
 }
@@ -101,7 +98,7 @@ const services = ref([
   width: 100%;
 }
 
-/* Hero Section */
+ 
 .hero-section {
   background-color: #5c1180;
   padding: 60px 24px 70px 24px;
@@ -131,7 +128,7 @@ const services = ref([
   font-weight: 500;
 }
 
-/* Services Grid Section */
+ 
 .services-grid-section {
   background-color: #ffffff;
   padding: 60px 24px;
@@ -183,7 +180,7 @@ const services = ref([
   line-height: 1.4;
 }
 
-/* Business Feature Section */
+ 
 .business-feature-section {
   background-color: #ffffff;
   padding: 40px 24px 80px 24px;
@@ -273,7 +270,7 @@ const services = ref([
   border-radius: 999px;
 }
 
-/* CTA Banner Section */
+ 
 .cta-banner-section {
   background-color: #5c1180;
   padding: 70px 24px;
@@ -317,11 +314,7 @@ const services = ref([
   background-color: #f8fafc;
 }
 
-/* ==========================================================================
-   Full Responsive Breakpoints
-   ========================================================================== */
-
-/* Large Desktops (1440px and up) */
+  
 @media (min-width: 1440px) {
   .hero-section {
     padding: 80px 32px 90px 32px;
@@ -336,7 +329,7 @@ const services = ref([
   }
 }
 
-/* Tablets and Laptops (768px to 1023px) */
+ 
 @media (max-width: 1023px) and (min-width: 768px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -356,7 +349,7 @@ const services = ref([
   }
 }
 
-/* Mobile Devices (Under 768px) */
+ 
 @media (max-width: 767px) {
   .hero-section {
     padding: 45px 18px 50px 18px;
@@ -412,7 +405,7 @@ const services = ref([
   }
 }
 
-/* Small Smartphone Screens (480px and down) */
+ 
 @media (max-width: 480px) {
   .hero-title {
     font-size: 1.7rem;

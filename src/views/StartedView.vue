@@ -124,11 +124,16 @@ const handleSignup = async () => {
   box-sizing: border-box;
 }
 
+/* Force Navbar and Footer components to span full width across the page */
+.page-wrapper > * {
+  width: 100%;
+}
+
 .signup-container {
   flex: 1;
   display: flex;
-  align-items: center;      
-  justify-content: center;  
+  align-items: center;      /* Vertically centers the form card */
+  justify-content: center;  /* Horizontally centers the form card */
   padding: 60px 24px;
   width: 100%;
   box-sizing: border-box;
@@ -139,8 +144,7 @@ const handleSignup = async () => {
   border-radius: 24px;
   padding: 48px 40px;
   width: 100%;
-  max-width: 460px;          
-  margin: 0 auto;           
+  max-width: 460px;          /* Keeps card focused at center */
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
   box-sizing: border-box;
 }

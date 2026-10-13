@@ -1,17 +1,17 @@
 <template>
   <div class="page-wrapper">
-    <!-- Reusable Navbar Component -->
+
     <Navbar />
 
-    <!-- Main Content / Download Hero -->
+  
     <main class="download-main">
       <div class="container">
-        <!-- Badge -->
+  
         <div class="badge-wrapper">
           <span class="badge">Mobile Banking Made Easy</span>
         </div>
 
-        <!-- Title & Subtitle -->
+        
         <h1 class="download-title">
           Get the <span class="text-purple">SwychPe</span> App
         </h1>
@@ -19,9 +19,9 @@
           Bank, pay, save with your Njangi group, and request instant loans right from your phone—anywhere in Cameroon. Choose your platform below to start.
         </p>
 
-        <!-- Store Download Buttons Container -->
+       
         <div class="store-buttons-container">
-          <!-- Google Play Store Button -->
+        
           <a 
             href="https://play.google.com/store" 
             target="_blank" 
@@ -37,7 +37,7 @@
             </div>
           </a>
 
-          <!-- Apple App Store Button -->
+       
           <a 
             href="https://apple.com/app-store" 
             target="_blank" 
@@ -54,7 +54,7 @@
           </a>
         </div>
 
-        <!-- Features Brief Grid -->
+  
         <div class="features-grid">
           <div class="feature-card">
             <div class="feature-num">1</div>
@@ -77,7 +77,7 @@
       </div>
     </main>
 
-    <!-- Reusable Footer Component -->
+   
     <Footer />
   </div>
 </template>
@@ -114,7 +114,7 @@ export default {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -127,7 +127,7 @@ export default {
 .badge {
   display: inline-block;
   background-color: #f3e8ff;
-  color: #7e22ce;
+  color: #9218BB;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -145,7 +145,7 @@ export default {
 }
 
 .text-purple {
-  color: #7e22ce;
+  color: #9218BB;
 }
 
 .download-subtitle {
@@ -156,7 +156,7 @@ export default {
   line-height: 1.6;
 }
 
-/* Store Buttons Styles */
+
 .store-buttons-container {
   display: flex;
   flex-direction: column;
@@ -227,7 +227,6 @@ export default {
   line-height: 1.1;
 }
 
-/* Features Grid */
 .features-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -257,7 +256,7 @@ export default {
   width: 2.5rem;
   height: 2.5rem;
   background-color: #f3e8ff;
-  color: #7e22ce;
+  color: #9218BB;
   border-radius: 0.5rem;
   display: flex;
   align-items: center;

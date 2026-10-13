@@ -5,20 +5,20 @@
         SwychPe
       </router-link>
 
+      <!-- Desktop Navigation Links using router-link -->
       <nav class="nav-menu desktop-only">
-        <a href="#pay" class="nav-link">Pay</a>
-        <a href="#borrow" class="nav-link">Borrow</a>
-        <a href="#save" class="nav-link">Save</a>
-        <a href="#business" class="nav-link">Business</a>
-        <a href="#security" class="nav-link">Security</a>
-        <a href="#help" class="nav-link">Help</a>
+        <router-link to="/pay" class="nav-link">Pay</router-link>
+        <router-link to="/borrow" class="nav-link">Borrow</router-link>
+        <router-link to="/save" class="nav-link">Save</router-link>
+        <router-link to="/business" class="nav-link">Business</router-link>
+        <router-link to="/security" class="nav-link">Security</router-link>
+        <router-link to="/help" class="nav-link">Help</router-link>
       </nav>
 
       <div class="nav-actions">
-        <router-link to="/download" class="btn-app-purple desktop-only">
+        <router-link to="/Started" class="btn-app-purple desktop-only">
           Get the app
         </router-link>
-
 
         <button 
           class="hamburger-btn mobile-only" 
@@ -32,14 +32,15 @@
       </div>
     </div>
 
+    <!-- Mobile Navigation Drawer using router-link -->
     <transition name="slide-fade">
       <div v-if="isMobileMenuOpen" class="mobile-drawer mobile-only">
-        <a href="#pay" class="mobile-nav-link" @click="isMobileMenuOpen = false">Pay</a>
-        <a href="#borrow" class="mobile-nav-link" @click="isMobileMenuOpen = false">Borrow</a>
-        <a href="#save" class="mobile-nav-link" @click="isMobileMenuOpen = false">Save</a>
-        <a href="#business" class="mobile-nav-link" @click="isMobileMenuOpen = false">Business</a>
-        <a href="#security" class="mobile-nav-link" @click="isMobileMenuOpen = false">Security</a>
-        <a href="#help" class="mobile-nav-link" @click="isMobileMenuOpen = false">Help</a>
+        <router-link to="/pay" class="mobile-nav-link" @click="isMobileMenuOpen = false">Pay</router-link>
+        <router-link to="/borrow" class="mobile-nav-link" @click="isMobileMenuOpen = false">Borrow</router-link>
+        <router-link to="/save" class="mobile-nav-link" @click="isMobileMenuOpen = false">Save</router-link>
+        <router-link to="/business" class="mobile-nav-link" @click="isMobileMenuOpen = false">Business</router-link>
+        <router-link to="/security" class="mobile-nav-link" @click="isMobileMenuOpen = false">Security</router-link>
+        <router-link to="/help" class="mobile-nav-link" @click="isMobileMenuOpen = false">Help</router-link>
         <router-link to="/Started" class="btn-app-mobile" @click="isMobileMenuOpen = false">
           Get the app
         </router-link>
@@ -67,7 +68,7 @@ const isMobileMenuOpen = ref(false)
 }
 
 .nav-container {
-  max-width: 1200px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
@@ -99,7 +100,8 @@ const isMobileMenuOpen = ref(false)
   transition: color 0.2s;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.router-link-active {
   color: #9218BB;
 }
 
@@ -144,6 +146,10 @@ const isMobileMenuOpen = ref(false)
   font-size: 1rem;
   font-weight: 700;
   padding: 6px 0;
+}
+
+.mobile-nav-link.router-link-active {
+  color: #9218BB;
 }
 
 .btn-app-mobile {

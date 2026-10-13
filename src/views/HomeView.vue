@@ -15,7 +15,7 @@
           <div class="hero-cta-group">
             <router-link to="/download" class="btn-primary">Download SwychPe</router-link>
             
-            <a href="#borrow" class="btn-secondary">See how loans work</a>
+            <router-link to="/borrow" class="btn-secondary">See how loans work</router-link>
           </div>
         </div>
 

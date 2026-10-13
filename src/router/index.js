@@ -10,14 +10,14 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('../views/AboutView.vue')
+      path: '/pay',
+      name: 'pay',
+      component: () => import('../views/PayView.vue')
     },
     {
-      path: '/how-it-works',
-      name: 'how-it-works',
-      component: () => import('../views/WorkView.vue')
+      path: '/security',
+      name: 'security',
+      component: () => import('../views/SecurityView.vue/index.js')
     },
     {
       path: '/services',
@@ -25,9 +25,9 @@ const router = createRouter({
       component: () => import('../views/ServicesView.vue')
     },
     {
-      path: '/faq',
-      name: 'faq',
-      component: () => import('../views/FaqView.vue')
+      path: '/save',
+      name: 'save',
+      component: () => import('../views/SaveView.vue/index.js')
     },
     {
       path: '/help',
@@ -35,14 +35,14 @@ const router = createRouter({
       component: () => import('../views/HelpView.vue')
     },
     {
-      path: '/login',
-      name: 'login',
-      component: () => import('../views/LoginView.vue')
+      path: '/borrow',
+      name: 'borrow',
+      component: () => import('../views/BorrowView.vue/index.js')
     },
     {
-      path: '/signup',
-      name: 'signup',
-      component: () => import('../views/SignView.vue')
+      path: '/business',
+      name: 'business',
+      component: () => import('../views/BusinessView.vue')
     },
    {
   path: '/download',

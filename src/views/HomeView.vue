@@ -632,7 +632,7 @@ const faqList = ref([
 .card-icon { font-size: 1.5rem; margin-bottom: 16px; }
 .text-purple { color: #9218BB; }
 .payment-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; }
-.payment-card p { font-size: 0.9rem; color: #666; line-height: 1.5; margin-bottom: 16px; }
+.payment-card p { font-size: 0.9rem; color: #fff; line-height: 1.5; margin-bottom: 16px; }
 
 .pill-group { display: flex; flex-wrap: wrap; gap: 8px; }
 .pill-badge { background-color: #ffffff; color: #9218BB; font-size: 0.75rem; font-weight: 700; padding: 6px 14px; border-radius: 999px; }

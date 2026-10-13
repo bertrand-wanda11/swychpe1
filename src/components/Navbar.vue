@@ -15,7 +15,7 @@
       </nav>
 
       <div class="nav-actions">
-        <router-link to="/Started" class="btn-app-purple desktop-only">
+        <router-link to="/Download" class="btn-app-purple desktop-only">
           Get the app
         </router-link>
 

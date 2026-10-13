@@ -47,7 +47,7 @@ const router = createRouter({
     {
       path: '/Started',
       name: 'get-started',
-      component: () => import('../views/StartedView.vue')
+      component: () => import('../views/DownloadView.vue/index.js')
     }
   ]
 })

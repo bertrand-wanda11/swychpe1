@@ -13,7 +13,7 @@
             SwychPe is a fully digital microfinance bank. Open an account in two minutes, pay any bill, top up any network, save with your Njangi group and get a loan without queuing at a branch.
           </p>
           <div class="hero-cta-group">
-            <router-link to="/Started" class="btn-primary">Download SwychPe</router-link>
+            <router-link to="/Download" class="btn-primary">Download SwychPe</router-link>
             <a href="#borrow" class="btn-secondary">See how loans work</a>
           </div>
         </div>

@@ -409,8 +409,8 @@
         <h2 class="cta-heading">Join SwychPe today</h2>
         <p class="cta-subheading">Banking that fits your pocket and your plans.</p>
         <div class="cta-buttons">
-          <router-link to="/Started" class="btn-app-white">Get it on Google Play</router-link>
-          <router-link to="/Started" class="btn-app-outline">Download on the App Store</router-link>
+          <router-link to="/download" class="btn-app-white">Get it on Google Play</router-link>
+          <router-link to="/download" class="btn-app-outline">Download on the App Store</router-link>
         </div>
       </div>
     </section>
@@ -552,7 +552,6 @@ const faqList = ref([
   text-decoration: none;
 }
 
-
 .phone-frame {
   width: 320px;
   margin: 0 auto;
@@ -693,7 +692,7 @@ const faqList = ref([
 .security-card p { font-size: 0.85rem; color: #666; line-height: 1.5; margin: 0; }
 
 
-.faq-list { max-width: 800px; }
+.faq-list { max-width: 1000px; }
 .faq-item { border-bottom: 1px solid #eae5f2; }
 .faq-toggle { width: 100%; text-align: left; background: transparent; border: none; padding: 18px 0; font-size: 1.05rem; font-weight: 700; color: #1a0826; cursor: pointer; display: flex; align-items: center; gap: 12px; }
 .faq-arrow { font-size: 0.7rem; color: #9218BB; transition: transform 0.2s; }

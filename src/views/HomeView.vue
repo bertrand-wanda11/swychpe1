@@ -2,7 +2,7 @@
   <div class="page-wrapper">
     <Navbar />
 
-    <!-- 1. Hero Section -->
+
     <section class="hero-section">
       <div class="container hero-grid">
         <div class="hero-text-col">

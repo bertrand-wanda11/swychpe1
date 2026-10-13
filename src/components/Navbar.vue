@@ -5,7 +5,6 @@
         SwychPe
       </router-link>
 
-      <!-- Desktop Navigation Links -->
       <nav class="nav-menu desktop-only">
         <a href="#pay" class="nav-link">Pay</a>
         <a href="#borrow" class="nav-link">Borrow</a>
@@ -15,13 +14,11 @@
         <a href="#help" class="nav-link">Help</a>
       </nav>
 
-      <!-- Right Action & Hamburger Button -->
       <div class="nav-actions">
         <router-link to="/Started" class="btn-app-purple desktop-only">
           Get the app
         </router-link>
 
-        <!-- Mobile Hamburger Toggle Button -->
         <button 
           class="hamburger-btn mobile-only" 
           @click="isMobileMenuOpen = !isMobileMenuOpen"
@@ -34,7 +31,6 @@
       </div>
     </div>
 
-    <!-- Mobile Slide-Down Drawer Menu -->
     <transition name="slide-fade">
       <div v-if="isMobileMenuOpen" class="mobile-drawer mobile-only">
         <a href="#pay" class="mobile-nav-link" @click="isMobileMenuOpen = false">Pay</a>
@@ -53,7 +49,6 @@
 
 <script setup>
 import { ref } from 'vue'
-
 const isMobileMenuOpen = ref(false)
 </script>
 
@@ -66,6 +61,7 @@ const isMobileMenuOpen = ref(false)
   position: sticky;
   top: 0;
   z-index: 1000;
+  font-family: "Bricolage Grotesque", "DM Sans", sans-serif;
   box-sizing: border-box;
 }
 
@@ -83,7 +79,7 @@ const isMobileMenuOpen = ref(false)
 .brand-logo {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #7b1fa2;
+  color: #9218BB;
   text-decoration: none;
   letter-spacing: -0.5px;
 }
@@ -103,11 +99,11 @@ const isMobileMenuOpen = ref(false)
 }
 
 .nav-link:hover {
-  color: #7b1fa2;
+  color: #9218BB;
 }
 
 .btn-app-purple {
-  background-color: #7b1fa2;
+  background-color: #9218BB;
   color: #ffffff;
   padding: 10px 24px;
   border-radius: 999px;
@@ -121,18 +117,16 @@ const isMobileMenuOpen = ref(false)
   opacity: 0.9;
 }
 
-/* Hamburger Icon Styling */
 .hamburger-btn {
   background: transparent;
   border: none;
   font-size: 1.6rem;
-  color: #7b1fa2;
+  color: #9218BB;
   cursor: pointer;
   padding: 4px 8px;
   display: none;
 }
 
-/* Mobile Drawer Menu */
 .mobile-drawer {
   display: flex;
   flex-direction: column;
@@ -154,7 +148,7 @@ const isMobileMenuOpen = ref(false)
 .btn-app-mobile {
   display: block;
   text-align: center;
-  background-color: #7b1fa2;
+  background-color: #9218BB;
   color: #ffffff;
   padding: 12px;
   border-radius: 999px;
@@ -163,7 +157,6 @@ const isMobileMenuOpen = ref(false)
   margin-top: 8px;
 }
 
-/* Vue Slide Transition */
 .slide-fade-enter-active,
 .slide-fade-leave-active {
   transition: all 0.25s ease-out;
@@ -175,9 +168,6 @@ const isMobileMenuOpen = ref(false)
   opacity: 0;
 }
 
-/* ==========================================================================
-   Responsive Display Classes
-   ========================================================================== */
 @media (min-width: 769px) {
   .mobile-only {
     display: none !important;

@@ -1,6 +1,5 @@
 <template>
   <div class="page-wrapper">
-    <!-- Reusable Navbar -->
     <Navbar />
 
     <!-- 1. Hero Section -->
@@ -136,7 +135,7 @@
       </div>
     </section>
 
-    <!-- 3. Borrow & Loans Section (Interactive Calculator) -->
+    <!-- 3. Borrow Section -->
     <section id="borrow" class="section-padding bg-dark-purple text-white">
       <div class="container borrow-grid">
         <div class="borrow-info">
@@ -380,7 +379,7 @@
       </div>
     </section>
 
-    <!-- 8. FAQ Accordion Section -->
+    <!-- 8. Expanded 10-Item FAQ Section -->
     <section id="help" class="section-padding bg-white">
       <div class="container">
         <h2 class="section-title">Questions people ask</h2>
@@ -415,7 +414,6 @@
       </div>
     </section>
 
-    <!-- Reusable Footer -->
     <Footer />
   </div>
 </template>
@@ -432,35 +430,55 @@ const openFaq = ref(null)
 const faqList = ref([
   {
     q: 'Do I need to visit a branch?',
-    a: 'No, account opening, verification, loans and support are handled completely inside the mobile app.'
+    a: 'No, account opening, verification, loans and customer support are handled completely inside the mobile app.'
   },
   {
     q: 'How do I put cash in my account?',
-    a: 'You can deposit cash into your SwychPe wallet using MTN Mobile Money, Orange Money, or at any authorized SwychPe agent.'
+    a: 'You can deposit cash into your SwychPe wallet using MTN Mobile Money, Orange Money, a credit union counter, or at any authorized SwychPe agent.'
   },
   {
     q: 'Who can get a loan?',
-    a: 'Any verified SwychPe account holder with an active transaction history can qualify for instant payday advances and working capital.'
+    a: 'Any verified SwychPe member with an active transaction profile can apply for instant payday advances and SME working capital directly in the app.'
   },
   {
     q: 'Is SwychPe safe?',
-    a: 'Yes. SwychPe is operated by a regulated microfinance cooperative institution using bank-grade encryption and biometric authentication.'
+    a: 'Yes. SwychPe is operated by a regulated microfinance cooperative institution under Cameroonian financial framework, with bank-grade encryption and biometric security.'
   },
   {
     q: 'What does it cost?',
-    a: 'Opening an account and transferring money to other SwychPe users is free. Fees for bill payments and cashouts are clear and shown upfront.'
+    a: 'Opening an account and transferring funds to other SwychPe users is 0 XAF. All bill payment, airtime, and cashout fees are fully transparent and shown before you confirm.'
+  },
+  {
+    q: 'How does digital Njangi work?',
+    a: 'You can create or join a group with friends or colleagues, set contribution amounts and payout schedules, and SwychPe manages the automated collection and payout transparently.'
+  },
+  {
+    q: 'Can I pay ENEO and CAMWATER bills on SwychPe?',
+    a: 'Yes! You can instantly pay ENEO electricity, CAMWATER, internet bills, and cable TV subscriptions directly from your wallet balance.'
+  },
+  {
+    q: 'How fast are loans paid out?',
+    a: 'Approved loan amounts are credited directly into your SwychPe wallet balance within minutes.'
+  },
+  {
+    q: 'What document do I need to register?',
+    a: 'You only need a valid Cameroonian National ID card or passport alongside a quick selfie to verify your identity.'
+  },
+  {
+    q: 'How do I contact SwychPe customer support?',
+    a: 'You can reach customer support 24/7 through in-app live chat, email at reachswyco@swychr.com, or visit our Buea office at Mayor Street, Molyko.'
   }
 ])
 </script>
 
 <style scoped>
-/* Page Layout Wrapper */
+/* Base Reset & Fonts */
 .page-wrapper {
   width: 100%;
   min-height: 100vh;
   background-color: #f5f3f8;
   color: #1a0826;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Bricolage Grotesque", "DM Sans", sans-serif;
   box-sizing: border-box;
 }
 
@@ -514,7 +532,7 @@ const faqList = ref([
 }
 
 .btn-primary {
-  background-color: #7b1fa2;
+  background-color: #9218BB;
   color: #ffffff;
   padding: 14px 28px;
   border-radius: 999px;
@@ -533,7 +551,7 @@ const faqList = ref([
   text-decoration: none;
 }
 
-/* Phone Mockup Frame */
+/* Phone Mockup */
 .phone-frame {
   width: 320px;
   margin: 0 auto;
@@ -554,7 +572,7 @@ const faqList = ref([
 .user-name { font-size: 1.1rem; font-weight: 800; }
 
 .wallet-card {
-  background-color: #7b1fa2;
+  background-color: #9218BB;
   color: #ffffff;
   border-radius: 16px;
   padding: 18px;
@@ -592,54 +610,36 @@ const faqList = ref([
   margin-bottom: 16px;
 }
 
-.advance-text strong { display: block; font-size: 0.8rem; color: #7b1fa2; }
+.advance-text strong { display: block; font-size: 0.8rem; color: #9218BB; }
 .advance-text p { font-size: 0.75rem; color: #666; margin: 0; }
-.btn-claim { border: none; background: transparent; color: #7b1fa2; font-size: 0.8rem; font-weight: 800; cursor: pointer; }
+.btn-claim { border: none; background: transparent; color: #9218BB; font-size: 0.8rem; font-weight: 800; cursor: pointer; }
 
 .recent-list { font-size: 0.72rem; }
 .tx-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f0f0f0; }
 .tx-amount { font-weight: 700; color: #333; }
 
-/* Headers & Cards */
+/* Section Headers & Cards */
 .section-header { margin-bottom: 40px; }
 .section-title { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 8px; }
 .section-subtitle { font-size: 1rem; color: #6b6b6b; margin: 0; }
 
-/* 2. Payments Section */
-.payments-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.payment-card {
-  border-radius: 20px;
-  padding: 32px 24px;
-}
-
-.featured-purple { background-color: #7b1fa2; color: #ffffff; grid-column: span 1; }
+/* Payments Section */
+.payments-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.payment-card { border-radius: 20px; padding: 32px 24px; }
+.featured-purple { background-color: #9218BB; color: #ffffff; }
 .featured-purple h3, .featured-purple p { color: #ffffff; }
-
 .border-card { background-color: #f8f6fc; border: 1px solid #eae5f2; }
 .card-icon { font-size: 1.5rem; margin-bottom: 16px; }
-.text-purple { color: #7b1fa2; }
-
+.text-purple { color: #9218BB; }
 .payment-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; }
 .payment-card p { font-size: 0.9rem; color: #666; line-height: 1.5; margin-bottom: 16px; }
 
 .pill-group { display: flex; flex-wrap: wrap; gap: 8px; }
-.pill-badge { background-color: #ffffff; color: #7b1fa2; font-size: 0.75rem; font-weight: 700; padding: 6px 14px; border-radius: 999px; }
+.pill-badge { background-color: #ffffff; color: #9218BB; font-size: 0.75rem; font-weight: 700; padding: 6px 14px; border-radius: 999px; }
 
-/* 3. Borrow Section */
-.borrow-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
-}
-
+/* Borrow Section */
+.borrow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
 .borrow-desc { color: #b3a5c2; font-size: 1rem; line-height: 1.6; margin-bottom: 24px; }
-
 .tab-options { display: flex; gap: 8px; margin-bottom: 16px; }
 .tab-btn { background-color: rgba(255, 255, 255, 0.1); color: #ffffff; border: none; padding: 10px 18px; border-radius: 999px; font-weight: 700; font-size: 0.85rem; cursor: pointer; }
 .tab-btn.active { background-color: #fbc02d; color: #1a0826; }
@@ -657,21 +657,21 @@ const faqList = ref([
 .summary-col strong { font-size: 1.2rem; color: #ffffff; }
 .calc-disclaimer { font-size: 0.72rem; color: #8c7b9e; margin: 0; }
 
-/* 4. Save Section */
+/* Save Section */
 .save-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .save-card { background-color: #f8f6fc; border-radius: 20px; padding: 32px 28px; }
 .save-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; }
 .save-card p { font-size: 0.9rem; color: #666; line-height: 1.5; margin: 0; }
-.solid-purple { background-color: #7b1fa2; color: #ffffff; }
+.solid-purple { background-color: #9218BB; color: #ffffff; }
 .solid-purple h3, .solid-purple p { color: #ffffff; }
 
-/* 5. Business Section */
+/* Business Section */
 .business-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .biz-card { background-color: #ffffff; border-radius: 20px; padding: 32px 28px; border: 1px solid #eae5f2; }
 .biz-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 8px; }
 .biz-card p { font-size: 0.9rem; color: #666; line-height: 1.5; margin: 0; }
 
-/* 6. More Services Section */
+/* More Services Section */
 .more-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .more-card { background-color: #f8f6fc; border-radius: 16px; padding: 24px 20px; }
 .more-card h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 6px; }
@@ -679,10 +679,10 @@ const faqList = ref([
 .card-title-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
 .tag-coming { background-color: #fbc02d; color: #1a0826; font-size: 0.68rem; font-weight: 800; padding: 4px 10px; border-radius: 999px; }
 
-/* 7. Steps & Security */
+/* Steps & Security */
 .steps-three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 60px; }
 .step-col { position: relative; }
-.step-num { font-size: 2rem; font-weight: 800; color: #7b1fa2; display: block; margin-bottom: 8px; }
+.step-num { font-size: 2rem; font-weight: 800; color: #9218BB; display: block; margin-bottom: 8px; }
 .step-col h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 6px; }
 .step-col p { font-size: 0.88rem; color: #666; line-height: 1.5; margin: 0; }
 
@@ -692,20 +692,20 @@ const faqList = ref([
 .security-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 6px; }
 .security-card p { font-size: 0.85rem; color: #666; line-height: 1.5; margin: 0; }
 
-/* 8. FAQ Section */
+/* FAQ Section */
 .faq-list { max-width: 800px; }
 .faq-item { border-bottom: 1px solid #eae5f2; }
 .faq-toggle { width: 100%; text-align: left; background: transparent; border: none; padding: 18px 0; font-size: 1.05rem; font-weight: 700; color: #1a0826; cursor: pointer; display: flex; align-items: center; gap: 12px; }
-.faq-arrow { font-size: 0.7rem; color: #7b1fa2; transition: transform 0.2s; }
+.faq-arrow { font-size: 0.7rem; color: #9218BB; transition: transform 0.2s; }
 .faq-item.active .faq-arrow { transform: rotate(90deg); }
 .faq-answer { padding-bottom: 18px; padding-left: 24px; color: #666; font-size: 0.9rem; line-height: 1.6; }
 
-/* 9. Final Banner */
-.cta-banner { background-color: #7b1fa2; color: #ffffff; padding: 80px 0; text-align: center; }
+/* CTA Banner */
+.cta-banner { background-color: #9218BB; color: #ffffff; padding: 80px 0; text-align: center; }
 .cta-heading { font-size: 2.8rem; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.8px; }
 .cta-subheading { font-size: 1.1rem; opacity: 0.9; margin-bottom: 32px; }
 .cta-buttons { display: flex; justify-content: center; gap: 16px; }
-.btn-app-white { background-color: #ffffff; color: #7b1fa2; padding: 14px 28px; border-radius: 999px; font-weight: 800; text-decoration: none; font-size: 0.95rem; }
+.btn-app-white { background-color: #ffffff; color: #9218BB; padding: 14px 28px; border-radius: 999px; font-weight: 800; text-decoration: none; font-size: 0.95rem; }
 .btn-app-outline { border: 2px solid #ffffff; color: #ffffff; padding: 14px 28px; border-radius: 999px; font-weight: 800; text-decoration: none; font-size: 0.95rem; }
 
 /* Responsive Media Queries */

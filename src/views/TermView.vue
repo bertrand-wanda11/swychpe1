@@ -1,9 +1,9 @@
 <template>
   <div class="page-wrapper">
-    <!-- Reusable Navbar -->
+
     <Navbar />
 
-    <!-- Hero Header Section -->
+
     <section class="terms-header-section">
       <div class="container">
         <h1 class="terms-title">SwychPe Terms and Conditions</h1>
@@ -15,10 +15,10 @@
       </div>
     </section>
 
-    <!-- Main Terms Content -->
+   
     <main class="terms-content-section bg-white">
       <div class="container terms-container">
-        <!-- Notice Card -->
+    
         <div class="notice-card">
           <h2>Notice to Users</h2>
           <p>
@@ -26,7 +26,7 @@
           </p>
         </div>
 
-        <!-- Section 1 -->
+     
         <article class="terms-block">
           <h3>1. Introduction & Acceptance of Terms</h3>
           <p>
@@ -34,7 +34,7 @@
           </p>
         </article>
 
-        <!-- Section 2 -->
+   
         <article class="terms-block">
           <h3>2. Definitions & Interpretation</h3>
           <ul>
@@ -53,7 +53,7 @@
           </ul>
         </article>
 
-        <!-- Section 3 -->
+     
         <article class="terms-block">
           <h3>3. Account Registration & Eligibility</h3>
           <ul>
@@ -69,7 +69,7 @@
           </ul>
         </article>
 
-        <!-- Section 4 -->
+     
         <article class="terms-block">
           <h3>4. Microfinance Services & Account Operations</h3>
           <ul>
@@ -91,7 +91,7 @@
           </ul>
         </article>
 
-        <!-- Section 5 -->
+   
         <article class="terms-block">
           <h3>5. SwychCredit (Micro-Loans & Credit Services)</h3>
           <ul>
@@ -112,7 +112,7 @@
           </ul>
         </article>
 
-        <!-- Section 6 -->
+       
         <article class="terms-block">
           <h3>6. Tariffs, Fees, and Commissions</h3>
           <p>
@@ -120,7 +120,7 @@
           </p>
         </article>
 
-        <!-- Section 7 -->
+    
         <article class="terms-block">
           <h3>7. Account Security & User Responsibilities</h3>
           <ul>
@@ -133,7 +133,7 @@
           </ul>
         </article>
 
-        <!-- Section 8 -->
+    
         <article class="terms-block">
           <h3>8. Anti-Money Laundering (AML) & Compliance</h3>
           <p>
@@ -141,7 +141,7 @@
           </p>
         </article>
 
-        <!-- Section 9 -->
+     
         <article class="terms-block">
           <h3>9. Intellectual Property & Account Termination</h3>
           <p>
@@ -149,7 +149,7 @@
           </p>
         </article>
 
-        <!-- Section 10 -->
+       
         <article class="terms-block contact-card">
           <h3>10. Governing Law & Dispute Resolution</h3>
           <p>
@@ -165,7 +165,7 @@
       </div>
     </main>
 
-    <!-- Reusable Footer -->
+
     <Footer />
   </div>
 </template>
@@ -195,7 +195,7 @@ import Footer from '../components/Footer.vue'
   background-color: #ffffff;
 }
 
-/* Header Section */
+
 .terms-header-section {
   padding: 60px 0 40px 0;
   background-color: #f5f3f8;
@@ -230,7 +230,7 @@ import Footer from '../components/Footer.vue'
   color: #ffffff;
 }
 
-/* Content Area */
+
 .terms-content-section {
   padding: 50px 0 80px 0;
 }
@@ -316,7 +316,7 @@ import Footer from '../components/Footer.vue'
   text-decoration: underline;
 }
 
-/* Mobile Responsiveness */
+
 @media (max-width: 768px) {
   .terms-title {
     font-size: 2rem;

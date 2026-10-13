@@ -1,9 +1,9 @@
 <template>
   <div class="page-wrapper">
-    <!-- Reusable Header / Navbar -->
+  
     <Navbar />
 
-    <!-- Privacy Policy Content Hero Section -->
+  
     <section class="policy-header-section">
       <div class="container">
         <h1 class="policy-title">SwychPe Privacy Policy</h1>
@@ -15,7 +15,7 @@
       </div>
     </section>
 
-    <!-- Main Policy Content -->
+  
     <main class="policy-content-section bg-white">
       <div class="container policy-container">
         <!-- Commitment Section -->
@@ -26,7 +26,6 @@
           </p>
         </div>
 
-        <!-- Section 1 -->
         <article class="policy-block">
           <h3>1. Information We Collect</h3>
           <p>To provide our digital microfinance banking and payment services, we collect the following types of information:</p>
@@ -51,7 +50,6 @@
           </ul>
         </article>
 
-        <!-- Section 2 -->
         <article class="policy-block">
           <h3>2. How We Use Your Information</h3>
           <p>SWYCO COOP-BOD uses your personal data for the following essential business purposes:</p>
@@ -64,7 +62,7 @@
           </ul>
         </article>
 
-        <!-- Section 3 -->
+     
         <article class="policy-block">
           <h3>3. Data Sharing and Disclosure</h3>
           <p>We do not sell your personal data. We only share your information with third parties under strict confidentiality agreements in the following circumstances:</p>
@@ -81,7 +79,7 @@
           </ul>
         </article>
 
-        <!-- Section 4 -->
+      
         <article class="policy-block">
           <h3>4. Data Storage and Security Measures</h3>
           <ul>
@@ -90,7 +88,6 @@
           </ul>
         </article>
 
-        <!-- Section 5 -->
         <article class="policy-block">
           <h3>5. Your Rights as a Data Subject</h3>
           <p>Subject to applicable regulatory record-keeping laws (which mandate financial institutions to retain financial transaction records for statutory audit periods), you have the right to:</p>
@@ -102,7 +99,7 @@
           </ul>
         </article>
 
-        <!-- Section 6 -->
+      
         <article class="policy-block">
           <h3>6. Updates to This Privacy Policy</h3>
           <p>
@@ -110,7 +107,7 @@
           </p>
         </article>
 
-        <!-- Section 7 -->
+    
         <article class="policy-block contact-card">
           <h3>7. Contact Information and Support</h3>
           <p>If you have questions, concerns, or requests regarding this Privacy Policy or your data, please contact our Data Protection and Legal Compliance Officer:</p>
@@ -124,7 +121,7 @@
       </div>
     </main>
 
-    <!-- Reusable Footer -->
+
     <Footer />
   </div>
 </template>
@@ -154,7 +151,7 @@ import Footer from '../components/Footer.vue'
   background-color: #ffffff;
 }
 
-/* Header Section */
+
 .policy-header-section {
   padding: 60px 0 40px 0;
   background-color: #f5f3f8;
@@ -189,7 +186,7 @@ import Footer from '../components/Footer.vue'
   color: #ffffff;
 }
 
-/* Main Content */
+
 .policy-content-section {
   padding: 50px 0 80px 0;
 }
@@ -275,7 +272,7 @@ import Footer from '../components/Footer.vue'
   text-decoration: underline;
 }
 
-/* Mobile Responsiveness */
+
 @media (max-width: 768px) {
   .policy-title {
     font-size: 2rem;

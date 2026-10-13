@@ -138,7 +138,7 @@
 }
 
 .footer-bottom-container {
-  max-width: 1100px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;

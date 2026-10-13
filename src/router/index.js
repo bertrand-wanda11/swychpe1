@@ -48,7 +48,12 @@ const router = createRouter({
   path: '/download',
   name: 'download',
   component: () => import('../views/DownloadView.vue') 
-}
+  },
+    {
+  path: '/privacy',
+  name: 'privacy',
+  component: () => import('../views/PrivacyView.vue') 
+  },
   ]
 })
 

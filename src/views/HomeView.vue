@@ -19,6 +19,7 @@
           </div>
         </div>
 
+        
         <div class="hero-mockup-col">
           <div class="phone-frame">
             <div class="phone-screen">

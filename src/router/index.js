@@ -17,7 +17,7 @@ const router = createRouter({
     {
       path: '/security',
       name: 'security',
-      component: () => import('../views/SecurityView.vue/index.js')
+      component: () => import('../views/SecurityView.vue')
     },
     {
       path: '/services',
@@ -27,7 +27,7 @@ const router = createRouter({
     {
       path: '/save',
       name: 'save',
-      component: () => import('../views/SaveView.vue/index.js')
+      component: () => import('../views/SaveView.vue')
     },
     {
       path: '/help',
@@ -37,7 +37,7 @@ const router = createRouter({
     {
       path: '/borrow',
       name: 'borrow',
-      component: () => import('../views/BorrowView.vue/index.js')
+      component: () => import('../views/BorrowView.vue')
     },
     {
       path: '/business',

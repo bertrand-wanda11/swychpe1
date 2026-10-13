@@ -15,9 +15,16 @@
       </nav>
 
       <div class="nav-actions">
-        <router-link to="/Download" class="btn-app-purple desktop-only">
+        <router-link to="/download" class="btn-app-purple desktop-only">
           Get the app
         </router-link>
+
+        <router-link 
+  to="/download" 
+  class="bg-purple-700 text-white font-semibold px-5 py-2.5 rounded-full hover:bg-purple-800 transition-colors"
+>
+  Get the app
+</router-link>
 
         <button 
           class="hamburger-btn mobile-only" 

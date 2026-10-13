@@ -45,8 +45,8 @@ const router = createRouter({
       component: () => import('../views/SignView.vue')
     },
     {
-      path: '/Started',
-      name: 'get-started',
+      path: '/download',
+      name: 'download',
       component: () => import('../views/DownloadView.vue/index.js')
     }
   ]

@@ -44,11 +44,11 @@ const router = createRouter({
       name: 'signup',
       component: () => import('../views/SignView.vue')
     },
-    {
-      path: '/download',
-      name: 'download',
-      component: () => import('../views/DownloadView.vue/index.js')
-    }
+   {
+  path: '/download',
+  name: 'download',
+  component: () => import('../views/DownloadView.vue') 
+}
   ]
 })
 

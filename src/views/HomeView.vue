@@ -79,7 +79,7 @@
       </div>
     </section>
 
-    <!-- 2. Everyday Payments Section -->
+   
     <section id="pay" class="section-padding bg-white">
       <div class="container">
         <div class="section-header">
@@ -136,7 +136,7 @@
       </div>
     </section>
 
-    <!-- 3. Borrow Section -->
+   
     <section id="borrow" class="section-padding bg-dark-purple text-white">
       <div class="container borrow-grid">
         <div class="borrow-info">
@@ -189,7 +189,7 @@
       </div>
     </section>
 
-    <!-- 4. Save Section -->
+   
     <section id="save" class="section-padding bg-white">
       <div class="container">
         <div class="section-header">
@@ -225,7 +225,7 @@
       </div>
     </section>
 
-    <!-- 5. Business Section -->
+
     <section id="business" class="section-padding bg-soft-purple">
       <div class="container">
         <div class="section-header">
@@ -261,7 +261,7 @@
       </div>
     </section>
 
-    <!-- 6. More Services Section -->
+   
     <section class="section-padding bg-white">
       <div class="container">
         <div class="section-header">
@@ -327,7 +327,7 @@
       </div>
     </section>
 
-    <!-- 7. Account Opening & Regulation Section -->
+   
     <section id="security" class="section-padding bg-soft-purple">
       <div class="container">
         <h2 class="section-title">Open your account in under two minutes</h2>
@@ -380,7 +380,7 @@
       </div>
     </section>
 
-    <!-- 8. Expanded 10-Item FAQ Section -->
+   
     <section id="help" class="section-padding bg-white">
       <div class="container">
         <h2 class="section-title">Questions people ask</h2>
@@ -403,7 +403,7 @@
       </div>
     </section>
 
-    <!-- 9. Final CTA Purple Banner -->
+
     <section class="cta-banner">
       <div class="container cta-content">
         <h2 class="cta-heading">Join SwychPe today</h2>
@@ -473,7 +473,7 @@ const faqList = ref([
 </script>
 
 <style scoped>
-/* Base Reset & Fonts */
+
 .page-wrapper {
   width: 100%;
   min-height: 100vh;
@@ -497,7 +497,7 @@ const faqList = ref([
 .bg-soft-purple { background-color: #f5f3f8; }
 .bg-dark-purple { background-color: #1a052c; }
 
-/* 1. Hero Section */
+
 .hero-section {
   padding: 60px 0 80px 0;
   background-color: #f5f3f8;
@@ -552,7 +552,7 @@ const faqList = ref([
   text-decoration: none;
 }
 
-/* Phone Mockup */
+
 .phone-frame {
   width: 320px;
   margin: 0 auto;
@@ -619,12 +619,12 @@ const faqList = ref([
 .tx-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f0f0f0; }
 .tx-amount { font-weight: 700; color: #333; }
 
-/* Section Headers & Cards */
+
 .section-header { margin-bottom: 40px; }
 .section-title { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 8px; }
 .section-subtitle { font-size: 1rem; color: #6b6b6b; margin: 0; }
 
-/* Payments Section */
+
 .payments-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .payment-card { border-radius: 20px; padding: 32px 24px; }
 .featured-purple { background-color: #9218BB; color: #ffffff; }
@@ -638,7 +638,7 @@ const faqList = ref([
 .pill-group { display: flex; flex-wrap: wrap; gap: 8px; }
 .pill-badge { background-color: #ffffff; color: #9218BB; font-size: 0.75rem; font-weight: 700; padding: 6px 14px; border-radius: 999px; }
 
-/* Borrow Section */
+
 .borrow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
 .borrow-desc { color: #b3a5c2; font-size: 1rem; line-height: 1.6; margin-bottom: 24px; }
 .tab-options { display: flex; gap: 8px; margin-bottom: 16px; }
@@ -658,7 +658,7 @@ const faqList = ref([
 .summary-col strong { font-size: 1.2rem; color: #ffffff; }
 .calc-disclaimer { font-size: 0.72rem; color: #8c7b9e; margin: 0; }
 
-/* Save Section */
+
 .save-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .save-card { background-color: #f8f6fc; border-radius: 20px; padding: 32px 28px; }
 .save-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; }
@@ -666,13 +666,13 @@ const faqList = ref([
 .solid-purple { background-color: #9218BB; color: #ffffff; }
 .solid-purple h3, .solid-purple p { color: #ffffff; }
 
-/* Business Section */
+
 .business-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .biz-card { background-color: #ffffff; border-radius: 20px; padding: 32px 28px; border: 1px solid #eae5f2; }
 .biz-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 8px; }
 .biz-card p { font-size: 0.9rem; color: #666; line-height: 1.5; margin: 0; }
 
-/* More Services Section */
+
 .more-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .more-card { background-color: #f8f6fc; border-radius: 16px; padding: 24px 20px; }
 .more-card h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 6px; }
@@ -680,7 +680,6 @@ const faqList = ref([
 .card-title-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
 .tag-coming { background-color: #fbc02d; color: #1a0826; font-size: 0.68rem; font-weight: 800; padding: 4px 10px; border-radius: 999px; }
 
-/* Steps & Security */
 .steps-three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 60px; }
 .step-col { position: relative; }
 .step-num { font-size: 2rem; font-weight: 800; color: #9218BB; display: block; margin-bottom: 8px; }
@@ -693,7 +692,7 @@ const faqList = ref([
 .security-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 6px; }
 .security-card p { font-size: 0.85rem; color: #666; line-height: 1.5; margin: 0; }
 
-/* FAQ Section */
+
 .faq-list { max-width: 800px; }
 .faq-item { border-bottom: 1px solid #eae5f2; }
 .faq-toggle { width: 100%; text-align: left; background: transparent; border: none; padding: 18px 0; font-size: 1.05rem; font-weight: 700; color: #1a0826; cursor: pointer; display: flex; align-items: center; gap: 12px; }
@@ -701,7 +700,7 @@ const faqList = ref([
 .faq-item.active .faq-arrow { transform: rotate(90deg); }
 .faq-answer { padding-bottom: 18px; padding-left: 24px; color: #666; font-size: 0.9rem; line-height: 1.6; }
 
-/* CTA Banner */
+
 .cta-banner { background-color: #9218BB; color: #ffffff; padding: 80px 0; text-align: center; }
 .cta-heading { font-size: 2.8rem; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.8px; }
 .cta-subheading { font-size: 1.1rem; opacity: 0.9; margin-bottom: 32px; }
@@ -709,7 +708,7 @@ const faqList = ref([
 .btn-app-white { background-color: #ffffff; color: #9218BB; padding: 14px 28px; border-radius: 999px; font-weight: 800; text-decoration: none; font-size: 0.95rem; }
 .btn-app-outline { border: 2px solid #ffffff; color: #ffffff; padding: 14px 28px; border-radius: 999px; font-weight: 800; text-decoration: none; font-size: 0.95rem; }
 
-/* Responsive Media Queries */
+
 @media (max-width: 992px) {
   .hero-grid, .borrow-grid { grid-template-columns: 1fr; }
   .payments-grid, .more-services-grid, .steps-three-col, .security-grid { grid-template-columns: 1fr 1fr; }

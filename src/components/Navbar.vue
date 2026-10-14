@@ -5,7 +5,6 @@
         SwychPe
       </router-link>
 
-      <!-- Desktop Navigation Links using router-link -->
       <nav class="nav-menu desktop-only">
         <router-link to="/pay" class="nav-link">Pay</router-link>
         <router-link to="/borrow" class="nav-link">Borrow</router-link>
@@ -31,8 +30,7 @@
         </button>
       </div>
     </div>
-
-    <!-- Mobile Navigation Drawer using router-link -->
+ 
     <transition name="slide-fade">
       <div v-if="isMobileMenuOpen" class="mobile-drawer mobile-only">
         <router-link to="/pay" class="mobile-nav-link" @click="isMobileMenuOpen = false">Pay</router-link>

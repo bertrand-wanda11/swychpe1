@@ -1,20 +1,17 @@
 <template>
   <footer class="footer">
     <div class="footer-container">
-   
       <div class="footer-left">
         <div class="footer-brand">SwychPe</div>
         <p>Digital microfinance banking for Cameroon, operated by Swychr Cooperative Society with Board of Directors.</p>
         
-     
         <div class="social-icons">
-      
           <a href="https://x.com" target="_blank" rel="noopener" aria-label="X (Twitter)" class="social-link">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
           </a>
-         
+          
           <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
               <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.48 1.48 0 1 0 0 2.96 1.48 1.48 0 0 0 0-2.96z"/>
@@ -35,6 +32,13 @@
         </div>
       </div>
 
+      <!-- Legal & Regulatory Notice Block -->
+      <div class="footer-center">
+        <h4 class="notice-title">Legal & Regulatory Notice</h4>
+        <p class="notice-text">
+          SwychPe is operated by <strong>Swychr Cooperative Society with Board of Directors (SWYCO COOP-BOD)</strong>, a Category 1 Microfinance Cooperative regulated under the supervision of <strong>COBAC</strong> and <strong>CAMCCUL</strong> in the Republic of Cameroon.
+        </p>
+      </div>
 
       <div class="footer-right">
         <p>Mayor Street, Molyko, Buea, Cameroon</p>
@@ -50,6 +54,8 @@
           <router-link to="/terms">Terms & Conditions</router-link>
           <span class="divider">•</span>
           <router-link to="/privacy">Privacy Policy</router-link>
+          <span class="divider">•</span>
+          <router-link to="/legal" class="regulatory-link">Regulatory & Legal Notice</router-link>
         </div>
       </div>
     </div>
@@ -67,14 +73,16 @@
   padding: 60px 0 0 0;
   font-size: 0.85rem;
   box-sizing: border-box;
+  font-family: "Bricolage Grotesque", "DM Sans", sans-serif;
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px 40px 24px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1.2fr 1.3fr 1fr;
+  gap: 32px;
   align-items: flex-start;
   width: 100%;
   box-sizing: border-box;
@@ -88,7 +96,7 @@
 }
 
 .footer-left p {
-  max-width: 400px;
+  max-width: 360px;
   line-height: 1.6;
   margin: 0 0 20px 0;
 }
@@ -112,9 +120,36 @@
 }
 
 .social-link:hover {
-  background-color: #7e22ce;
+  background-color: #9218BB;
   color: #ffffff;
   transform: translateY(-2px);
+}
+
+/* Regulatory Center Block */
+.footer-center {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.notice-title {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.2px;
+}
+
+.notice-text {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.notice-text strong {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .footer-right p {
@@ -173,14 +208,17 @@
   color: rgba(255, 255, 255, 0.3);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .footer-container {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 24px;
   }
   .footer-right p {
     text-align: left;
   }
+}
+
+@media (max-width: 768px) {
   .footer-bottom-container {
     flex-direction: column;
     gap: 12px;

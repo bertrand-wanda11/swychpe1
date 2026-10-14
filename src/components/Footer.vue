@@ -1,6 +1,7 @@
 <template>
   <footer class="footer">
     <div class="footer-container">
+
       <div class="footer-left">
         <div class="footer-brand">SwychPe</div>
         <p>Digital microfinance banking for Cameroon, operated by Swychr Cooperative Society with Board of Directors.</p>
@@ -32,13 +33,36 @@
         </div>
       </div>
 
-    
+  
       <div class="footer-center">
-        <h4 class="notice-title">Legal & Regulatory Notice</h4>
-        <p class="notice-text">
-          SwychPe is operated by <strong>Swychr Cooperative Society with Board of Directors (SWYCO COOP-BOD)</strong>, a Category 1 Microfinance Cooperative regulated under the supervision of <strong>COBAC</strong> and <strong>CAMCCUL</strong> in the Republic of Cameroon.
+        <h4 class="notice-title">REGULATORY & LEGAL NOTICE</h4>
+        <p class="notice-intro">
+          <strong>SwychPe</strong> is a financial technology brand and mobile platform provided by 
+          <strong>Swychr Cooperative Society with Board of Directors (SWYCO COOP-BOD)</strong>.
+        </p>
+        <ul class="notice-list">
+          <li>
+            <strong>Legal Entity:</strong> Swychr Cooperative Society with Board of Directors (SWYCO COOP-BOD)
+          </li>
+          <li>
+            <strong>Registration / Matriculation No.:</strong> 
+            <span class="reg-number">26/022/CMR/SW/53/282/CCA/036004/036004000</span>
+          </li>
+          <li>
+            <strong>Regulatory Supervision:</strong> Operating as a Category 1 Microfinance Cooperative being supervised by the 
+            <strong>Cameroon Cooperative Credit Union League (CAMCCUL)</strong> under Official Letter Ref. No.: 
+            <strong>141.1/08/26 of 10th July 2026</strong>.
+          </li>
+          <li>
+            <strong>Regulatory Authority:</strong> Under the supervisory framework of the 
+            <strong>Central African Banking Commission (COBAC)</strong> and the <strong>Ministry of Finance (MINFI)</strong>, Cameroon.
+          </li>
+        </ul>
+        <p class="notice-disclaimer">
+          All funds, user deposits, account balances, and micro-credit facilities made available through the SwychPe mobile application are held and administered directly by SWYCO COOP-BOD.
         </p>
       </div>
+
 
       <div class="footer-right">
         <p>Mayor Street, Molyko, Buea, Cameroon</p>
@@ -47,6 +71,7 @@
       </div>
     </div>
 
+
     <div class="footer-bottom">
       <div class="footer-bottom-container">
         <p>© {{ new Date().getFullYear() }} SwychPe. All rights reserved.</p>
@@ -54,8 +79,6 @@
           <router-link to="/terms">Terms & Conditions</router-link>
           <span class="divider">•</span>
           <router-link to="/privacy">Privacy Policy</router-link>
-          <span class="divider">•</span>
-          <router-link to="/legal" class="regulatory-link">Regulatory & Legal Notice</router-link>
         </div>
       </div>
     </div>
@@ -77,11 +100,11 @@
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 24px 40px 24px;
   display: grid;
-  grid-template-columns: 1.2fr 1.3fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
   gap: 32px;
   align-items: flex-start;
   width: 100%;
@@ -96,7 +119,7 @@
 }
 
 .footer-left p {
-  max-width: 360px;
+  max-width: 320px;
   line-height: 1.6;
   margin: 0 0 20px 0;
 }
@@ -129,27 +152,57 @@
 .footer-center {
   background-color: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 16px 20px;
+  border-radius: 14px;
+  padding: 20px 24px;
 }
 
 .notice-title {
   color: #ffffff;
-  font-size: 0.9rem;
-  font-weight: 700;
-  margin: 0 0 8px 0;
-  letter-spacing: -0.2px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-.notice-text {
-  margin: 0;
+.notice-intro {
+  margin: 0 0 12px 0;
   font-size: 0.78rem;
-  line-height: 1.55;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.notice-intro strong,
+.notice-list strong {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.notice-list {
+  margin: 0 0 12px 0;
+  padding-left: 18px;
+  font-size: 0.76rem;
+  line-height: 1.6;
   color: rgba(255, 255, 255, 0.65);
 }
 
-.notice-text strong {
-  color: rgba(255, 255, 255, 0.9);
+.notice-list li {
+  margin-bottom: 6px;
+}
+
+.reg-number {
+  font-family: monospace;
+  color: #d1c4e9;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.notice-disclaimer {
+  margin: 0;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.55);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 10px;
 }
 
 .footer-right p {
@@ -211,7 +264,7 @@
 @media (max-width: 992px) {
   .footer-container {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 28px;
   }
   .footer-right p {
     text-align: left;

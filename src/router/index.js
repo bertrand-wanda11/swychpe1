@@ -56,13 +56,8 @@ const routes = [
     path: '/terms',
     name: 'terms',
     component: () => import('../views/TermView.vue')
-  },
-  {
-    path: '/legal',
-    name: 'legal',
-
-    component: () => import('../views/LegalView.vue')
   }
+
 ]
 
 const router = createRouter({

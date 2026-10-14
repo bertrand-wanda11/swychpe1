@@ -32,7 +32,7 @@
         </div>
       </div>
 
-      <!-- Legal & Regulatory Notice Block -->
+    
       <div class="footer-center">
         <h4 class="notice-title">Legal & Regulatory Notice</h4>
         <p class="notice-text">
@@ -125,7 +125,7 @@
   transform: translateY(-2px);
 }
 
-/* Regulatory Center Block */
+
 .footer-center {
   background-color: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);

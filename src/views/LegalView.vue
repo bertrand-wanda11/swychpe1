@@ -1,9 +1,9 @@
 <template>
   <div class="page-wrapper">
-    <!-- Reusable Navbar -->
+  
     <Navbar />
 
-    <!-- Hero Header -->
+   
     <section class="regulatory-header-section bg-soft">
       <div class="container">
         <h1 class="page-title">Regulatory & Legal Notice</h1>
@@ -18,10 +18,10 @@
       </div>
     </section>
 
-    <!-- Main Content -->
+    
     <main class="regulatory-content-section bg-white">
       <div class="container main-container">
-        <!-- Core Entity Declaration Card -->
+        
         <div class="declaration-card">
           <div class="card-badge-icon">🛡</div>
           <h2>Brand & Operating Entity Declaration</h2>
@@ -31,7 +31,7 @@
           </p>
         </div>
 
-        <!-- Official Registration & Regulatory Grid -->
+      
         <div class="legal-details-grid">
           <div class="detail-card">
             <div class="card-header">
@@ -74,7 +74,7 @@
           </div>
         </div>
 
-        <!-- Deposit & Fund Protection Notice -->
+         
         <div class="protection-box">
           <h3>Fund & Deposit Administration Guarantee</h3>
           <p>
@@ -82,7 +82,7 @@
           </p>
         </div>
 
-        <!-- Official Contact Details -->
+        
         <div class="contact-card">
           <h3>Official Headquarters & Support</h3>
           <p><strong>Regional Office:</strong> SWYCO COOP-BOD Regional Office, Mayor Street, Molyko, Buea, Cameroon</p>
@@ -92,7 +92,7 @@
       </div>
     </main>
 
-    <!-- Reusable Footer -->
+     
     <Footer />
   </div>
 </template>
@@ -121,7 +121,7 @@ import Footer from '../components/Footer.vue'
 .bg-soft { background-color: #f5f3f8; }
 .bg-white { background-color: #ffffff; }
 
-/* Header Section */
+ 
 .regulatory-header-section {
   padding: 60px 0 40px 0;
   border-bottom: 1px solid #eae5f2;
@@ -172,7 +172,7 @@ import Footer from '../components/Footer.vue'
   border: 1px solid #9218BB;
 }
 
-/* Main Content */
+ 
 .regulatory-content-section {
   padding: 50px 0 80px 0;
 }
@@ -204,7 +204,7 @@ import Footer from '../components/Footer.vue'
   margin: 0;
 }
 
-/* Legal Details Grid */
+ 
 .legal-details-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -258,7 +258,7 @@ import Footer from '../components/Footer.vue'
   word-break: break-all;
 }
 
-/* Fund Protection Box */
+ 
 .protection-box {
   background-color: #1a052c;
   color: #ffffff;
@@ -280,8 +280,7 @@ import Footer from '../components/Footer.vue'
   line-height: 1.6;
   margin: 0;
 }
-
-/* Contact Card */
+ 
 .contact-card {
   background-color: #f8f6fc;
   border: 1px solid #eae5f2;
@@ -312,7 +311,7 @@ import Footer from '../components/Footer.vue'
   text-decoration: underline;
 }
 
-/* Mobile Responsiveness */
+ 
 @media (max-width: 768px) {
   .legal-details-grid {
     grid-template-columns: 1fr;

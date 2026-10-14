@@ -56,6 +56,6 @@ import Footer from '../components/Footer.vue'
 .icon { font-size: 1.8rem; margin-bottom: 16px; }
 .text-purple { color: #9218BB; }
 .card h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 8px; }
-.card p { font-size: 0.92rem; color: #666; line-height: 1.6; margin: 0; }
+.card p { font-size: 0.92rem; color: #fff; line-height: 1.6; margin: 0; }
 @media (max-width: 768px) { .grid-cards { grid-template-columns: 1fr; } .hero-title { font-size: 2rem; } }
 </style>

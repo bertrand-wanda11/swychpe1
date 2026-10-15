@@ -13,9 +13,10 @@ export const company = {
   address: 'Mayor Street, Molyko, Buea, South-West Region, Cameroon',
   office: 'SWYCO COOP-BOD Regional Office',
   playStore: 'https://play.google.com/store/apps/details?id=com.swychr.swychpe',
-  // Direct APK while the store listings await approval. apkDownload starts the
-  // download; apkDrive is the Drive preview page as a fallback.
-  apkDownload: 'https://drive.usercontent.google.com/download?id=1SRLrQmkDDx-XqyacYCR-vN7oqiE7c0VI&export=download&confirm=t',
+  // Direct APK while the store listings await approval. apkDownload (GCS bucket
+  // swychpe-downloads in jump-the-que, overwritten on each release) starts the
+  // download; apkDrive is the Drive copy as a fallback.
+  apkDownload: 'https://storage.googleapis.com/swychpe-downloads/SwychPe.apk',
   apkDrive: 'https://drive.google.com/file/d/1SRLrQmkDDx-XqyacYCR-vN7oqiE7c0VI/view?usp=sharing',
   appStore: 'https://apps.apple.com/',
 }

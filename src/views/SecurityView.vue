@@ -1,53 +1,115 @@
 <template>
-  <div class="page-wrapper">
-    <Navbar />
-    <section class="hero-section bg-soft">
-      <div class="container">
-        <h1 class="hero-title">Regulated, Safe, and Protected</h1>
-        <p class="hero-subtitle">SwychPe operates as a Category 1 Microfinance Cooperative under strict CAMCCUL and COBAC regulatory oversight.</p>
-      </div>
-    </section>
+  <PageHero
+    crumb="Security"
+    eyebrow="Security & compliance"
+    title="Your money and your identity, protected"
+    lead="SwychPe combines regulated cooperative governance with layered technical controls — from liveness-checked onboarding to one-time codes on every withdrawal."
+  />
 
-    <main class="content-section bg-white">
-      <div class="container grid-three">
-        <div class="sec-card">
-          <div class="icon">🛡</div>
-          <h3>COBAC Regulated</h3>
-          <p>Operated by Swychr Cooperative Society with Board of Directors under strict Cameroonian microfinance standards.</p>
-        </div>
-        <div class="sec-card">
-          <div class="icon">🔒</div>
-          <h3>Biometric Security</h3>
-          <p>Bank-grade 256-bit SSL encryption, device lockup verification, and 24/7 automated threat monitoring.</p>
-        </div>
-        <div class="sec-card">
-          <div class="icon">👥</div>
-          <h3>Member Owned</h3>
-          <p>As a cooperative microfinance bank, profits and operations exist solely to serve our member ecosystem.</p>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">In the app</p>
+        <h2 class="h-section">Layers of protection</h2>
+      </div>
+      <div class="grid grid-3">
+        <div v-for="c in controls" :key="c.title" class="card">
+          <span class="icon-tile"><AppIcon :name="c.icon" /></span>
+          <h3>{{ c.title }}</h3>
+          <p>{{ c.text }}</p>
         </div>
       </div>
-    </main>
-    <Footer />
-  </div>
+    </div>
+  </section>
+
+  <section class="section bg-tint">
+    <div class="container two">
+      <div>
+        <p class="eyebrow">Governance</p>
+        <h2 class="h-section">Regulated and accountable</h2>
+        <ul class="check-list">
+          <li v-for="g in governance" :key="g"><AppIcon name="check" :size="18" />{{ g }}</li>
+        </ul>
+      </div>
+      <div class="card tips">
+        <h3><AppIcon name="alert" :size="20" /> Stay safe</h3>
+        <ul class="check-list">
+          <li v-for="t in tips" :key="t"><AppIcon name="shield" :size="18" />{{ t }}</li>
+        </ul>
+        <p class="report">
+          Suspect fraud? Email <a :href="`mailto:${company.email}?subject=Fraud%20report`">{{ company.email }}</a>
+          immediately.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
 </template>
 
 <script setup>
-import Navbar from '../components/Navbar.vue'
-import Footer from '../components/Footer.vue'
+import AppIcon from '../components/AppIcon.vue'
+import CtaBand from '../components/CtaBand.vue'
+import PageHero from '../components/PageHero.vue'
+import { company } from '../data/site'
+
+const controls = [
+  { icon: 'id', title: 'Document verification', text: 'Your national ID or passport is captured and reviewed before your account is upgraded.' },
+  { icon: 'camera', title: 'Liveness selfie', text: 'An on-device liveness check confirms a real person is present, defeating photo and screen replays.' },
+  { icon: 'key', title: 'Hashed MPIN', text: 'Your 4-digit MPIN is never stored in readable form; repeated wrong attempts temporarily lock the account.' },
+  { icon: 'fingerprint', title: 'Biometric unlock', text: 'Use your phone fingerprint or face unlock to open the app quickly and securely.' },
+  { icon: 'smartphone', title: 'One-time codes', text: 'Registration and withdrawals are confirmed with a one-time code sent to your phone.' },
+  { icon: 'activity', title: 'Login records', text: 'Every sign-in is recorded with its device and network details for investigation and audit.' },
+  { icon: 'lock', title: 'Encrypted in transit', text: 'All traffic between the app and our servers uses TLS encryption.' },
+  { icon: 'server', title: 'Double-entry ledger', text: 'Every movement of money is recorded as balanced ledger entries with a full audit trail.' },
+  { icon: 'bell', title: 'Instant alerts', text: 'Push notifications for every credit and debit mean you spot unexpected activity at once.' },
+]
+
+const governance = [
+  'Operated by Swychr Cooperative Society with Board of Directors (SWYCO COOP-BOD)',
+  'Affiliated with the Cameroon Cooperative Credit Union League (CamCCUL)',
+  'Subject to COBAC microfinance regulation and reporting',
+  'KYC and AML/CFT controls in line with CEMAC regulations',
+  'Member data handled as described in our Privacy Policy',
+]
+
+const tips = [
+  'SwychPe staff will never ask for your MPIN or one-time codes.',
+  'Only install SwychPe from Google Play or the official App Store.',
+  'Check the recipient name on the confirmation screen before sending.',
+  'Lock your phone with a PIN, pattern or biometrics.',
+]
 </script>
 
 <style scoped>
-.page-wrapper { font-family: "Bricolage Grotesque", "DM Sans", sans-serif; min-height: 100vh; }
-.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-.bg-soft { background-color: #f5f3f8; }
-.hero-section { padding: 60px 0; }
-.hero-title { font-size: 2.8rem; font-weight: 800; color: #1a0826; margin-bottom: 12px; }
-.hero-subtitle { font-size: 1.05rem; color: #6b6b6b; max-width: 680px; }
-.content-section { padding: 60px 0 80px 0; background-color: #ffffff; }
-.grid-three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.sec-card { background: #f8f6fc; border-radius: 20px; padding: 32px 24px; border: 1px solid #eae5f2; }
-.icon { font-size: 2rem; color: #9218BB; margin-bottom: 12px; }
-.sec-card h3 { font-size: 1.2rem; font-weight: 800; color: #1a0826; margin-bottom: 8px; }
-.sec-card p { font-size: 0.9rem; color: #666; line-height: 1.6; margin: 0; }
-@media (max-width: 768px) { .grid-three { grid-template-columns: 1fr; } .hero-title { font-size: 2rem; } }
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+.two .check-list {
+  margin-top: 24px;
+}
+.tips h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.tips h3 svg {
+  color: #a06c00;
+}
+.tips .check-list li svg {
+  color: var(--brand);
+}
+.report {
+  margin: 20px 0 0 !important;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+@media (max-width: 900px) {
+  .two {
+    grid-template-columns: 1fr;
+  }
+}
 </style>

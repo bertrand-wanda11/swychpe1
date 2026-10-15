@@ -1,48 +1,181 @@
 <template>
-  <div class="page-wrapper">
-    <Navbar />
-    <section class="hero-section bg-soft">
-      <div class="container">
-        <h1 class="hero-title">Save the Way Cameroon Already Saves</h1>
-        <p class="hero-subtitle">Digitize your Njangi groups, set goal-oriented target savings, and earn attractive interest with fixed deposits.</p>
-      </div>
-    </section>
+  <PageHero
+    crumb="Save"
+    eyebrow="Savings & investment"
+    title="Grow your money with a cooperative that you own"
+    lead="Full Account members earn interest on Savings and Investment balances and hold shares in Swychr Cooperative. Daily Savings and Mini accounts help you build the habit first."
+  >
+    <router-link to="/accounts" class="btn btn-gold">Compare savings accounts</router-link>
+  </PageHero>
 
-    <main class="content-section bg-white">
-      <div class="container grid-two">
-        <div class="save-box">
-          <div class="icon">👥</div>
-          <h3>Digital Njangi Groups</h3>
-          <p>Form digital contribution circles, manage payout order transparently, and eliminate ledger disputes with automated reminders.</p>
-        </div>
-        <div class="save-box">
-          <div class="icon">🎯</div>
-          <h3>Target Savings</h3>
-          <p>Lock funds for school fees, rent, or emergency funds while earning interest directly into your SwychPe account.</p>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Available now</p>
+        <h2 class="h-section">Ways to save with SwychPe</h2>
+      </div>
+      <div class="grid grid-3">
+        <article v-for="s in options" :key="s.title" class="card card-hover">
+          <div class="top">
+            <span class="icon-tile"><AppIcon :name="s.icon" /></span>
+            <StatusBadge status="live" />
+          </div>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.text }}</p>
+          <ul class="check-list sm">
+            <li v-for="p in s.points" :key="p"><AppIcon name="check" :size="16" />{{ p }}</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-brand">
+    <div class="container own">
+      <div>
+        <p class="eyebrow">Member-owned</p>
+        <h2 class="h-section">Why saving with a cooperative is different</h2>
+        <p class="lead">
+          Swychr Cooperative is owned by its members, not distant shareholders. As a Full Account member your shares
+          give you a stake in the institution that holds your savings.
+        </p>
+      </div>
+      <ul class="own-list">
+        <li v-for="o in ownership" :key="o.title">
+          <span class="icon-tile dark"><AppIcon :name="o.icon" :size="20" /></span>
+          <div>
+            <strong>{{ o.title }}</strong>
+            <span>{{ o.text }}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Coming soon</p>
+        <h2 class="h-section">Save the way Cameroon already saves</h2>
+      </div>
+      <div class="grid grid-3">
+        <div v-for="r in roadmap" :key="r.title" class="card">
+          <div class="top">
+            <span class="icon-tile gold"><AppIcon :name="r.icon" /></span>
+            <StatusBadge status="soon" />
+          </div>
+          <h3>{{ r.title }}</h3>
+          <p>{{ r.text }}</p>
         </div>
       </div>
-    </main>
-    <Footer />
-  </div>
+    </div>
+  </section>
+
+  <CtaBand />
 </template>
 
 <script setup>
-import Navbar from '../components/Navbar.vue'
-import Footer from '../components/Footer.vue'
+import AppIcon from '../components/AppIcon.vue'
+import CtaBand from '../components/CtaBand.vue'
+import PageHero from '../components/PageHero.vue'
+import StatusBadge from '../components/StatusBadge.vue'
+
+const options = [
+  {
+    icon: 'target',
+    title: 'Savings sub-account',
+    text: 'Part of the Full Account with Shares. Your savings balance earns interest at the applicable rate.',
+    points: ['Earns interest', '10,000 XAF minimum balance', 'Separate from your spending balance'],
+  },
+  {
+    icon: 'activity',
+    title: 'Investment sub-account',
+    text: 'Place funds for a fixed term to earn interest under the cooperative rate structure.',
+    points: ['Earns interest', 'Term placements', 'Tracked in the app'],
+  },
+  {
+    icon: 'pie',
+    title: 'Cooperative shares',
+    text: 'Subscribe to 1–10 ordinary shares at 10,000 XAF each and become a member-owner.',
+    points: ['Ownership stake', 'At least 50% paid up at opening', 'Held in your Shares sub-account'],
+  },
+  {
+    icon: 'store',
+    title: 'Daily Savings Account',
+    text: 'Designed for traders and daily earners who deposit small amounts often.',
+    points: ['Free deposits', '3,000 XAF minimum balance', 'Payroll processing available'],
+  },
+  {
+    icon: 'smartphone',
+    title: 'Mini Account',
+    text: 'A no-setup-fee account for verified adults who want to keep a reserve.',
+    points: ['No setup fee', '5,000 XAF minimum balance', 'Released on closure'],
+  },
+  {
+    icon: 'school',
+    title: 'Student Account',
+    text: 'Help students manage pocket money and school fees with free statements.',
+    points: ['1,000 XAF one-time setup', 'Free e-statements', 'No running fees'],
+  },
+]
+
+const ownership = [
+  { icon: 'users', title: 'Democratic governance', text: 'A board of directors accountable to the membership.' },
+  { icon: 'heart', title: 'Solidarity fund', text: 'Member contributions that support the cooperative community.' },
+  { icon: 'building', title: 'Building contribution', text: 'A one-time contribution that builds shared infrastructure.' },
+  { icon: 'shield-check', title: 'Regulated & audited', text: 'Supervised under COBAC microfinance rules and CamCCUL standards.' },
+]
+
+const roadmap = [
+  { icon: 'users', title: 'Digital Njangi groups', text: 'Create or join a contribution circle, set the payout order and let the app keep the ledger.' },
+  { icon: 'target', title: 'Target savings', text: 'Lock money towards school fees, rent or a new phone and track progress.' },
+  { icon: 'landmark', title: 'Community pools', text: 'Manage church, village or association funds transparently with multiple signatories.' },
+]
 </script>
 
 <style scoped>
-.page-wrapper { font-family: "Bricolage Grotesque", "DM Sans", sans-serif; min-height: 100vh; }
-.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-.bg-soft { background-color: #f5f3f8; }
-.hero-section { padding: 60px 0; }
-.hero-title { font-size: 2.8rem; font-weight: 800; color: #1a0826; margin-bottom: 12px; }
-.hero-subtitle { font-size: 1.05rem; color: #6b6b6b; max-width: 680px; }
-.content-section { padding: 60px 0 80px 0; background-color: #ffffff; }
-.grid-two { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.save-box { background: #f8f6fc; border-radius: 20px; padding: 36px 28px; border: 1px solid #eae5f2; }
-.icon { font-size: 2rem; margin-bottom: 12px; color: #9218BB; }
-.save-box h3 { font-size: 1.25rem; font-weight: 800; color: #1a0826; margin-bottom: 8px; }
-.save-box p { font-size: 0.92rem; color: #666; line-height: 1.6; margin: 0; }
-@media (max-width: 768px) { .grid-two { grid-template-columns: 1fr; } .hero-title { font-size: 2rem; } }
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.check-list.sm {
+  margin-top: 18px;
+  gap: 8px;
+  font-size: 0.88rem;
+}
+.own {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.own-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 20px;
+}
+.own-list li {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.own-list .icon-tile {
+  margin: 0;
+}
+.own-list strong {
+  display: block;
+  color: #fff;
+}
+.own-list span {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+@media (max-width: 900px) {
+  .own {
+    grid-template-columns: 1fr;
+  }
+}
 </style>

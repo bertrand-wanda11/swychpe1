@@ -1,22 +1,16 @@
 <template>
   <div class="page-wrapper">
 
-    <Navbar />
 
-
-    <section class="terms-header-section">
-      <div class="container">
-        <h1 class="terms-title">SwychPe Terms and Conditions</h1>
-        <div class="meta-badges">
-          <span class="badge">SWYCO COOP-BOD</span>
-          <span class="badge">COBAC & CAMCCUL Regulated</span>
-          <span class="badge date">Effective: October 2026</span>
-        </div>
-      </div>
-    </section>
+    <PageHero
+      crumb="Terms & conditions"
+      eyebrow="Legal"
+      title="Terms and Conditions"
+      lead="The terms that govern your SwychPe account and your use of the SwychPe app and services. Effective October 2026."
+    />
 
    
-    <main class="terms-content-section bg-white">
+    <div class="terms-content-section bg-white">
       <div class="container terms-container">
     
         <div class="notice-card">
@@ -163,25 +157,20 @@
           </div>
         </article>
       </div>
-    </main>
-
-
-    <Footer />
+    </div>
   </div>
 </template>
 
 <script setup>
-import Navbar from '../components/Navbar.vue'
-import Footer from '../components/Footer.vue'
+import PageHero from '../components/PageHero.vue'
 </script>
 
 <style scoped>
 .page-wrapper {
   width: 100%;
   min-height: 100vh;
-  background-color: #f5f3f8;
-  color: #1a0826;
-  font-family: "Bricolage Grotesque", "DM Sans", sans-serif;
+  background-color: #ffffff;
+  color: var(--ink);
   box-sizing: border-box;
 }
 
@@ -218,7 +207,7 @@ import Footer from '../components/Footer.vue'
 
 .badge {
   background-color: #f0e6f7;
-  color: #9218BB;
+  color: var(--brand);
   font-size: 0.8rem;
   font-weight: 700;
   padding: 6px 14px;
@@ -226,7 +215,7 @@ import Footer from '../components/Footer.vue'
 }
 
 .badge.date {
-  background-color: #9218BB;
+  background-color: var(--brand);
   color: #ffffff;
 }
 
@@ -237,7 +226,7 @@ import Footer from '../components/Footer.vue'
 
 .notice-card {
   background-color: #fbf9fc;
-  border-left: 4px solid #9218BB;
+  border-left: 4px solid var(--brand);
   border-radius: 0 16px 16px 0;
   padding: 24px 28px;
   margin-bottom: 40px;
@@ -246,7 +235,7 @@ import Footer from '../components/Footer.vue'
 .notice-card h2 {
   font-size: 1.3rem;
   font-weight: 800;
-  color: #9218BB;
+  color: var(--brand);
   margin-bottom: 8px;
 }
 
@@ -307,7 +296,7 @@ import Footer from '../components/Footer.vue'
 }
 
 .entity-details a {
-  color: #9218BB;
+  color: var(--brand);
   text-decoration: none;
   font-weight: 700;
 }

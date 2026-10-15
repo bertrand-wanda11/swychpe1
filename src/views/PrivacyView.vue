@@ -1,22 +1,16 @@
 <template>
   <div class="page-wrapper">
-  
-    <Navbar />
 
   
-    <section class="policy-header-section">
-      <div class="container">
-        <h1 class="policy-title">SwychPe Privacy Policy</h1>
-        <div class="meta-badges">
-          <span class="badge">SWYCO COOP-BOD</span>
-          <span class="badge">COBAC & CAMCCUL Regulated</span>
-          <span class="badge date">Effective: October 2026</span>
-        </div>
-      </div>
-    </section>
+    <PageHero
+      crumb="Privacy policy"
+      eyebrow="Legal"
+      title="Privacy Policy"
+      lead="How Swychr Cooperative (SWYCO COOP-BOD) collects, uses, stores and protects your personal and financial data when you use SwychPe. Effective October 2026."
+    />
 
   
-    <main class="policy-content-section bg-white">
+    <div class="policy-content-section bg-white">
       <div class="container policy-container">
         <!-- Commitment Section -->
         <div class="commitment-card">
@@ -97,6 +91,12 @@
             <li>Withdraw consent for marketing communications at any time.</li>
             <li>Request account deactivation and data deletion, subject to clearing outstanding debt and fulfilling statutory legal retention mandates.</li>
           </ul>
+          <p>
+            To exercise these rights, follow the steps on our <router-link to="/delete-account">account deletion page</router-link>
+            or, to remove specific data while keeping your account, our <router-link to="/delete-data">data deletion page</router-link>.
+            Identity, KYC and transaction records are retained for 10 years after account closure as required by CEMAC
+            AML/CFT regulation and COBAC rules; all other personal data is deleted within 30 days of a verified request.
+          </p>
         </article>
 
       
@@ -119,25 +119,20 @@
           </div>
         </article>
       </div>
-    </main>
-
-
-    <Footer />
+    </div>
   </div>
 </template>
 
 <script setup>
-import Navbar from '../components/Navbar.vue'
-import Footer from '../components/Footer.vue'
+import PageHero from '../components/PageHero.vue'
 </script>
 
 <style scoped>
 .page-wrapper {
   width: 100%;
   min-height: 100vh;
-  background-color: #f5f3f8;
-  color: #1a0826;
-  font-family: "Bricolage Grotesque", "DM Sans", sans-serif;
+  background-color: #ffffff;
+  color: var(--ink);
   box-sizing: border-box;
 }
 
@@ -174,7 +169,7 @@ import Footer from '../components/Footer.vue'
 
 .badge {
   background-color: #f0e6f7;
-  color: #9218BB;
+  color: var(--brand);
   font-size: 0.8rem;
   font-weight: 700;
   padding: 6px 14px;
@@ -182,7 +177,7 @@ import Footer from '../components/Footer.vue'
 }
 
 .badge.date {
-  background-color: #9218BB;
+  background-color: var(--brand);
   color: #ffffff;
 }
 
@@ -193,7 +188,7 @@ import Footer from '../components/Footer.vue'
 
 .commitment-card {
   background-color: #fbf9fc;
-  border-left: 4px solid #9218BB;
+  border-left: 4px solid var(--brand);
   border-radius: 0 16px 16px 0;
   padding: 24px 28px;
   margin-bottom: 40px;
@@ -202,7 +197,7 @@ import Footer from '../components/Footer.vue'
 .commitment-card h2 {
   font-size: 1.3rem;
   font-weight: 800;
-  color: #9218BB;
+  color: var(--brand);
   margin-bottom: 8px;
 }
 
@@ -263,7 +258,7 @@ import Footer from '../components/Footer.vue'
 }
 
 .contact-details a {
-  color: #9218BB;
+  color: var(--brand);
   text-decoration: none;
   font-weight: 700;
 }

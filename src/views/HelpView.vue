@@ -1,49 +1,116 @@
 <template>
-  <div class="page-wrapper">
-    <Navbar />
-    <section class="hero-section bg-soft">
-      <div class="container">
-        <h1 class="hero-title">How Can We Help You?</h1>
-        <p class="hero-subtitle">Get support 24/7 via in-app live chat, email, or visit our regional office in Buea.</p>
-      </div>
-    </section>
+  <PageHero
+    crumb="Help centre"
+    eyebrow="Support"
+    title="How can we help?"
+    lead="Find answers to common questions, or reach our member support team by email or at our Buea office."
+  />
 
-    <main class="content-section bg-white">
-      <div class="container grid-two">
-        <div class="help-box">
-          <h3>Headquarters Location</h3>
-          <p>SWYCO COOP-BOD Regional Office</p>
-          <p class="detail">Mayor Street, Molyko, Buea, Cameroon</p>
+  <section class="section-sm">
+    <div class="container">
+      <div class="grid grid-3">
+        <a :href="`mailto:${company.email}`" class="card card-hover contact">
+          <span class="icon-tile"><AppIcon name="mail" /></span>
+          <h3>Email support</h3>
+          <p>{{ company.email }}</p>
+          <small>We reply within one business day.</small>
+        </a>
+        <div class="card contact">
+          <span class="icon-tile"><AppIcon name="pin" /></span>
+          <h3>Visit us</h3>
+          <p>{{ company.office }}</p>
+          <small>{{ company.address }}</small>
         </div>
-        <div class="help-box">
-          <h3>Customer Support Channels</h3>
-          <p>Email: <a href="mailto:reachswyco@swychr.com">reachswyco@swychr.com</a></p>
-          <p class="detail">In-app live chat available 24 hours daily.</p>
+        <router-link to="/delete-account" class="card card-hover contact">
+          <span class="icon-tile"><AppIcon name="trash" /></span>
+          <h3>Close your account</h3>
+          <p>Request account closure or data deletion.</p>
+          <small>See what we delete and what we must keep.</small>
+        </router-link>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-tint">
+    <div class="container faq-grid">
+      <div>
+        <p class="eyebrow">FAQ</p>
+        <h2 class="h-section">Frequently asked questions</h2>
+        <div class="topics">
+          <router-link v-for="t in topics" :key="t.to" :to="t.to" class="topic">
+            <AppIcon :name="t.icon" :size="18" /> {{ t.label }}
+            <AppIcon name="chevron-right" :size="16" class="end" />
+          </router-link>
         </div>
       </div>
-    </main>
-    <Footer />
-  </div>
+      <FaqList :items="faqs" />
+    </div>
+  </section>
 </template>
 
 <script setup>
-import Navbar from '../components/Navbar.vue'
-import Footer from '../components/Footer.vue'
+import AppIcon from '../components/AppIcon.vue'
+import FaqList from '../components/FaqList.vue'
+import PageHero from '../components/PageHero.vue'
+import { company, faqs } from '../data/site'
+
+const topics = [
+  { to: '/accounts', label: 'Accounts & fees', icon: 'layers' },
+  { to: '/pay', label: 'Deposits, transfers & withdrawals', icon: 'arrow-left-right' },
+  { to: '/security', label: 'Security & fraud', icon: 'shield' },
+  { to: '/privacy', label: 'Privacy & your data', icon: 'lock' },
+]
 </script>
 
 <style scoped>
-.page-wrapper { font-family: "Bricolage Grotesque", "DM Sans", sans-serif; min-height: 100vh; }
-.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-.bg-soft { background-color: #f5f3f8; }
-.hero-section { padding: 60px 0; }
-.hero-title { font-size: 2.8rem; font-weight: 800; color: #1a0826; margin-bottom: 12px; }
-.hero-subtitle { font-size: 1.05rem; color: #6b6b6b; max-width: 680px; }
-.content-section { padding: 60px 0 80px 0; background-color: #ffffff; }
-.grid-two { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.help-box { background: #f8f6fc; border-radius: 20px; padding: 32px 28px; border: 1px solid #eae5f2; }
-.help-box h3 { font-size: 1.25rem; font-weight: 800; color: #9218BB; margin-bottom: 10px; }
-.help-box p { font-size: 0.95rem; color: #1a0826; margin: 4px 0; }
-.help-box .detail { color: #666; font-size: 0.9rem; }
-.help-box a { color: #9218BB; font-weight: 700; text-decoration: none; }
-@media (max-width: 768px) { .grid-two { grid-template-columns: 1fr; } .hero-title { font-size: 2rem; } }
+.contact {
+  text-decoration: none;
+  color: inherit;
+}
+.contact p {
+  color: var(--ink);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.contact small {
+  color: var(--muted);
+}
+.faq-grid {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 56px;
+  align-items: start;
+}
+.topics {
+  display: grid;
+  gap: 8px;
+  margin-top: 24px;
+}
+.topic {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+.topic svg {
+  color: var(--brand);
+}
+.topic .end {
+  margin-left: auto;
+  color: var(--muted);
+}
+.topic:hover {
+  border-color: var(--brand-200);
+}
+@media (max-width: 900px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>

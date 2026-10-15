@@ -1,722 +1,739 @@
 <template>
-  <div class="page-wrapper">
-    <Navbar />
-
-
-    <section class="hero-section">
-      <div class="container hero-grid">
-        <div class="hero-text-col">
-          <h1 class="hero-title">
-            Bank, pay and borrow from your phone, anywhere in Cameroon.
-          </h1>
-          <p class="hero-description">
-            SwychPe is a fully digital microfinance bank. Open an account in two minutes, pay any bill, top up any network, save with your Njangi group and get a loan without queuing at a branch.
-          </p>
-          <div class="hero-cta-group">
-            <router-link to="/download" class="btn-primary">Download SwychPe</router-link>
-            
-            <router-link to="/borrow" class="btn-secondary">See how loans work</router-link>
-          </div>
+  <!-- Hero -->
+  <section class="hero bg-brand">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="hero-chip"><AppIcon name="shield-check" :size="16" /> Licensed cooperative · CamCCUL affiliated</span>
+        <h1 class="h-display">Your bank, fully digital. Built for Cameroon.</h1>
+        <p class="lead">
+          SwychPe is the banking app of Swychr Cooperative. Open an account from your phone, verify your identity in
+          minutes, and deposit, transfer, withdraw and download statements without visiting a branch.
+        </p>
+        <div class="btn-row">
+          <router-link to="/early-access" class="btn btn-gold">
+            Claim your early invite <AppIcon name="arrow-right" :size="18" />
+          </router-link>
+          <a :href="company.apkDownload" rel="noopener" class="btn btn-ghost-light">
+            <AppIcon name="download" :size="16" /> Download APK
+          </a>
         </div>
+        <p class="store-note">
+          <AppIcon name="clock" :size="14" /> Google Play &amp; App Store listings awaiting approval — Android APK available now.
+        </p>
+        <ul class="hero-proof">
+          <li><strong>0 XAF</strong><span>member transfers</span></li>
+          <li><strong>5</strong><span>account tiers</span></li>
+          <li><strong>100%</strong><span>in-app onboarding</span></li>
+        </ul>
+      </div>
 
-        
-        <div class="hero-mockup-col">
-          <div class="phone-frame">
-            <div class="phone-screen">
-              <div class="screen-header">
-                <span class="greeting-sub">Good morning</span>
-                <span class="user-name">Amina</span>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="phone">
+          <div class="ph-head">
+            <div class="ph-top">
+              <img :src="appIcon" alt="" class="ph-logo" width="34" height="34" />
+              <div>
+                <small>Good morning</small>
+                <strong>Amina M.</strong>
               </div>
-
-              <div class="wallet-card">
-                <span class="wallet-label">Wallet balance</span>
-                <div class="wallet-amount">XAF 84,500</div>
+              <span class="ph-bell"><AppIcon name="bell" :size="16" /></span>
+            </div>
+            <small class="ph-label">Full Account · Savings</small>
+            <div class="ph-bal">XAF 284,500</div>
+            <small class="ph-live">XAF · Live balance</small>
+          </div>
+          <div class="ph-actions">
+            <span v-for="a in phoneActions" :key="a.label">
+              <i><AppIcon :name="a.icon" :size="18" /></i>{{ a.label }}
+            </span>
+          </div>
+          <div class="ph-list">
+            <p class="ph-list-title">Recent activity</p>
+            <div v-for="t in phoneTx" :key="t.name" class="ph-tx">
+              <i :class="t.dir"><AppIcon :name="t.dir === 'in' ? 'arrow-down' : 'arrow-up'" :size="14" /></i>
+              <div>
+                <strong>{{ t.name }}</strong>
+                <small>{{ t.meta }}</small>
               </div>
-
-              <div class="action-grid">
-                <div class="action-item">
-                  <div class="action-icon">⬚</div>
-                  <span>Scan</span>
-                </div>
-                <div class="action-item">
-                  <div class="action-icon">📱</div>
-                  <span>Airtime</span>
-                </div>
-                <div class="action-item">
-                  <div class="action-icon">⚡</div>
-                  <span>Bills</span>
-                </div>
-                <div class="action-item">
-                  <div class="action-icon">➕</div>
-                  <span>Loans</span>
-                </div>
-              </div>
-
-              <div class="advance-box">
-                <div class="advance-text">
-                  <strong>Pre-approved advance</strong>
-                  <p>Up to XAF 150,000</p>
-                </div>
-                <button class="btn-claim">Claim</button>
-              </div>
-
-              <div class="recent-list">
-                <div class="tx-row">
-                  <span>ENEO electricity</span>
-                  <span class="tx-amount">Paid, XAF 12,000</span>
-                </div>
-                <div class="tx-row">
-                  <span>MTN airtime</span>
-                  <span class="tx-amount">XAF 1,000</span>
-                </div>
-                <div class="tx-row">
-                  <span>Njangi, Molyko Traders</span>
-                  <span class="tx-amount">XAF 5,000</span>
-                </div>
-              </div>
+              <b :class="t.dir">{{ t.amount }}</b>
             </div>
           </div>
+        </div>
+        <div class="float f1">
+          <span class="icon-tile gold"><AppIcon name="check-circle" :size="18" /></span>
+          <div><strong>KYC verified</strong><small>Liveness check passed</small></div>
+        </div>
+        <div class="float f2">
+          <span class="icon-tile"><AppIcon name="send" :size="18" /></span>
+          <div><strong>XAF 25,000 sent</strong><small>Fee: 0 XAF</small></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-   
-    <section id="pay" class="section-padding bg-white">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Everyday payments, all in one wallet</h2>
-          <p class="section-subtitle">Stop juggling apps, kiosks and cash. Pay for what you use every day in a few taps.</p>
-        </div>
-
-        <div class="payments-grid">
-          <div class="payment-card featured-purple">
-            <div class="card-icon">⬚</div>
-            <h3>Scan and pay</h3>
-            <p>Pay shops, restaurants, market stalls and transport by scanning a QR code. No change needed and no cash to carry.</p>
-          </div>
-
-          <div class="payment-card border-card">
-            <div class="card-icon text-purple">📱</div>
-            <h3>Airtime and data for every network</h3>
-            <p>Top up yourself or anyone you know, instantly.</p>
-            <div class="pill-group">
-              <span class="pill-badge">MTN</span>
-              <span class="pill-badge">Orange</span>
-              <span class="pill-badge">Camtel</span>
-              <span class="pill-badge">Nexttel</span>
-            </div>
-          </div>
-
-          <div class="payment-card border-card">
-            <div class="card-icon text-purple">⚡</div>
-            <h3>Bill payments</h3>
-            <p>Electricity, water and internet, paid without leaving home.</p>
-            <div class="pill-group">
-              <span class="pill-badge">ENEO</span>
-              <span class="pill-badge">CAMWATER</span>
-            </div>
-          </div>
-
-          <div class="payment-card border-card">
-            <div class="card-icon text-purple">📺</div>
-            <h3>Cable and streaming</h3>
-            <p>Renew your TV subscription in seconds.</p>
-            <div class="pill-group">
-              <span class="pill-badge">Canal+</span>
-              <span class="pill-badge">StarTimes</span>
-              <span class="pill-badge">DStv</span>
-            </div>
-          </div>
-
-          <div class="payment-card border-card">
-            <div class="card-icon text-purple">⇆</div>
-            <h3>Free transfers</h3>
-            <p>Send money to any SwychPe member for 0 XAF, and move cash in and out with MTN MoMo and Orange Money.</p>
-          </div>
+  <!-- Trust strip -->
+  <section class="trust">
+    <div class="container trust-grid">
+      <div v-for="t in trust" :key="t.title" class="trust-item">
+        <AppIcon :name="t.icon" :size="22" />
+        <div>
+          <strong>{{ t.title }}</strong>
+          <span>{{ t.text }}</span>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-   
-    <section id="borrow" class="section-padding bg-dark-purple text-white">
-      <div class="container borrow-grid">
-        <div class="borrow-info">
-          <h2 class="section-title text-white">Fast loans when life or business moves faster than payday</h2>
-          <p class="borrow-desc">Apply in the app, get a decision quickly and receive the money in your SwychPe wallet. No paperwork and no branch visit.</p>
+  <!-- Live features -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">In the app today</p>
+        <h2 class="h-section">A complete bank account in your pocket</h2>
+        <p class="lead">Every capability below is live in the current SwychPe Android release.</p>
+      </div>
+      <div class="grid grid-3">
+        <article v-for="f in liveFeatures" :key="f.title" class="card card-hover">
+          <span class="icon-tile"><AppIcon :name="f.icon" /></span>
+          <h3>{{ f.title }}</h3>
+          <p>{{ f.text }}</p>
+          <router-link v-if="f.to" :to="f.to" class="link-arrow more">Learn more <AppIcon name="arrow-right" :size="16" /></router-link>
+        </article>
+      </div>
+    </div>
+  </section>
 
-          <div class="tab-options">
-            <button class="tab-btn active">Pay day advance</button>
-            <button class="tab-btn">Device financing</button>
-            <button class="tab-btn">SME working capital</button>
-          </div>
+  <!-- How it works -->
+  <section class="section bg-tint">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Get started</p>
+        <h2 class="h-section">From download to first deposit in four steps</h2>
+      </div>
+      <ol class="steps">
+        <li v-for="(s, i) in steps" :key="s.title">
+          <span class="step-n">{{ String(i + 1).padStart(2, '0') }}</span>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.text }}</p>
+        </li>
+      </ol>
+    </div>
+  </section>
 
-          <p class="tab-caption">
-            Cover rent, school fees or a medical bill before salary arrives. Borrow a small amount for a short time and repay on payday.
-          </p>
-
-          <div class="pill-group">
-            <span class="pill-badge dark-pill">Repay from the app</span>
-            <span class="pill-badge dark-pill">Limits grow as you repay on time</span>
-          </div>
+  <!-- Accounts preview -->
+  <section class="section">
+    <div class="container">
+      <div class="split-head">
+        <div class="section-head">
+          <p class="eyebrow">Accounts</p>
+          <h2 class="h-section">An account for every stage of your financial life</h2>
+          <p class="lead">Start on Basic and upgrade inside the app. The exact quote is shown before you confirm.</p>
         </div>
+        <router-link to="/accounts#compare" class="btn btn-outline">Compare all accounts</router-link>
+      </div>
+      <div class="acct-row">
+        <router-link
+          v-for="a in accounts"
+          :key="a.code"
+          to="/accounts"
+          class="acct"
+          :class="{ featured: a.featured }"
+        >
+          <span v-if="a.featured" class="badge badge-brand">Full membership</span>
+          <h3>{{ a.name }}</h3>
+          <p>{{ a.tagline }}</p>
+          <dl>
+            <div><dt>Setup</dt><dd>{{ a.setupFee }}</dd></div>
+            <div><dt>Min. balance</dt><dd>{{ a.minBalance }}</dd></div>
+          </dl>
+        </router-link>
+      </div>
+    </div>
+  </section>
 
-        <div class="calculator-card">
-          <div class="calc-group">
-            <label>How much do you need?</label>
-            <div class="calc-amount">XAF {{ loanAmount.toLocaleString() }}</div>
-            <input type="range" min="10000" max="300000" step="5000" v-model.number="loanAmount" class="range-slider" />
-          </div>
-
-          <div class="calc-group">
-            <label>For how long? {{ loanDuration }} month</label>
-            <input type="range" min="1" max="6" step="1" v-model.number="loanDuration" class="range-slider" />
-          </div>
-
-          <div class="calc-summary">
-            <div class="summary-col">
-              <span>You repay in total</span>
-              <strong>XAF {{ Math.round(loanAmount * 1.02).toLocaleString() }}</strong>
-            </div>
-            <div class="summary-col">
-              <span>Per month</span>
-              <strong>XAF {{ Math.round((loanAmount * 1.02) / loanDuration).toLocaleString() }}</strong>
-            </div>
-          </div>
-
-          <p class="calc-disclaimer">
-            Illustration only, at 2% per month. Your real offer depends on your SwychPe profile and repayment history.
-          </p>
+  <!-- Security -->
+  <section class="section bg-brand">
+    <div class="container sec-grid">
+      <div>
+        <p class="eyebrow">Security & compliance</p>
+        <h2 class="h-section">Bank-grade protection at every step</h2>
+        <p class="lead">
+          Your identity is verified once, every sign-in is monitored, and every withdrawal needs your
+          confirmation.
+        </p>
+        <router-link to="/security" class="btn btn-ghost-light">How we protect you <AppIcon name="arrow-right" :size="16" /></router-link>
+      </div>
+      <div class="grid grid-2">
+        <div v-for="s in security" :key="s.title" class="sec-card">
+          <span class="icon-tile dark"><AppIcon :name="s.icon" /></span>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.text }}</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-   
-    <section id="save" class="section-padding bg-white">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Save the way Cameroon already saves</h2>
-          <p class="section-subtitle">Set goals, join your Njangi online and earn on your savings with a regulated microfinance institution.</p>
-        </div>
-
-        <div class="save-grid">
-          <div class="save-card">
-            <div class="card-icon text-purple">👥</div>
-            <h3>Digital Njangi groups</h3>
-            <p>Create or join a group, set contributions and payout order, and let the app keep the ledger. No more disputes over who paid.</p>
+  <!-- Roadmap -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Roadmap</p>
+        <h2 class="h-section">What's coming to SwychPe</h2>
+        <p class="lead">We are building these next, in line with our cooperative licence. They will appear in the app as they launch.</p>
+      </div>
+      <div class="grid grid-4">
+        <div v-for="r in roadmap" :key="r.title" class="card road">
+          <div class="road-top">
+            <span class="icon-tile gold"><AppIcon :name="r.icon" /></span>
+            <StatusBadge status="soon" />
           </div>
-
-          <div class="save-card">
-            <div class="card-icon text-purple">🎯</div>
-            <h3>Target savings</h3>
-            <p>Save for school fees, rent or a new phone. Lock your goal so you stay on track and earn interest as you go.</p>
-          </div>
-
-          <div class="save-card">
-            <div class="card-icon text-purple">👥</div>
-            <h3>Community savings pools</h3>
-            <p>Pool money with your church, village union or association and manage it transparently.</p>
-          </div>
-
-          <div class="save-card solid-purple">
-            <div class="card-icon text-white">🛡</div>
-            <h3>Fixed deposits</h3>
-            <p>Lock money away for a set period and earn a higher return. Open and track it in the app.</p>
-          </div>
+          <h3>{{ r.title }}</h3>
+          <p>{{ r.text }}</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-
-    <section id="business" class="section-padding bg-soft-purple">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Built for traders, shops and growing businesses</h2>
-          <p class="section-subtitle">Take payments, pay your team and get the working capital to restock, all from one business profile.</p>
-        </div>
-
-        <div class="business-grid">
-          <div class="biz-card">
-            <div class="card-icon text-purple">🏪</div>
-            <h3>Accept payments with one QR code</h3>
-            <p>Print your SwychPe QR code and get paid instantly by customers. Low processing fees and a clear daily sales record that helps you qualify for bigger loans.</p>
-          </div>
-
-          <div class="biz-card">
-            <div class="card-icon text-purple">➕</div>
-            <h3>Working capital for SMEs</h3>
-            <p>Restock before the busy season or take on a big order. Borrow against your sales history and repay in flexible instalments.</p>
-          </div>
-
-          <div class="biz-card">
-            <div class="card-icon text-purple">👥</div>
-            <h3>Pay staff and suppliers in bulk</h3>
-            <p>Send salaries and supplier payments to many wallets or mobile money numbers in one go.</p>
-          </div>
-
-          <div class="biz-card">
-            <div class="card-icon text-purple">⚡</div>
-            <h3>Become a SwychPe agent</h3>
-            <p>Earn commission by helping neighbours deposit and withdraw cash. Open a kiosk or shop as a SwychPe point.</p>
-          </div>
-        </div>
+  <!-- FAQ -->
+  <section class="section bg-tint">
+    <div class="container faq-grid">
+      <div>
+        <p class="eyebrow">FAQ</p>
+        <h2 class="h-section">Questions people ask</h2>
+        <p class="lead">Can't find your answer? Our help centre has more, or email us any time.</p>
+        <router-link to="/help" class="link-arrow">Visit the help centre <AppIcon name="arrow-right" :size="16" /></router-link>
       </div>
-    </section>
+      <FaqList :items="faqs.slice(0, 6)" />
+    </div>
+  </section>
 
-   
-    <section class="section-padding bg-white">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">More to make your money go further</h2>
-          <p class="section-subtitle">We keep adding services people ask for.</p>
-        </div>
-
-        <div class="more-services-grid">
-          <div class="more-card">
-            <h3>School fees</h3>
-            <p>Pay school and university fees on time, with the option to save toward them.</p>
-          </div>
-
-          <div class="more-card">
-            <h3>Diaspora transfers</h3>
-            <p>Receive money from family abroad straight into your wallet through SwychRemit.</p>
-          </div>
-
-          <div class="more-card">
-            <h3>USD virtual card</h3>
-            <p>Shop online and pay for subscriptions with a virtual USD card.</p>
-          </div>
-
-          <div class="more-card">
-            <h3>Rewards and referrals</h3>
-            <p>Earn rewards for paying, saving and inviting friends.</p>
-          </div>
-
-          <div class="more-card">
-            <h3>Taxes and public fees</h3>
-            <p>Pay licences, council fees and taxes without standing in line.</p>
-          </div>
-
-          <div class="more-card">
-            <h3>Spending insights</h3>
-            <p>See where your money goes each month and set budgets that stick.</p>
-          </div>
-
-          <div class="more-card">
-            <div class="card-title-row">
-              <h3>Micro-insurance</h3>
-              <span class="tag-coming">Coming soon</span>
-            </div>
-            <p>Cover for health, phones and shops, paid in small amounts.</p>
-          </div>
-
-          <div class="more-card">
-            <div class="card-title-row">
-              <h3>Bus and event tickets</h3>
-              <span class="tag-coming">Coming soon</span>
-            </div>
-            <p>Book travel and events and pay by scanning.</p>
-          </div>
-
-          <div class="more-card">
-            <div class="card-title-row">
-              <h3>Family wallets</h3>
-              <span class="tag-coming">Coming soon</span>
-            </div>
-            <p>Set allowances for children and relatives with spending limits.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-   
-    <section id="security" class="section-padding bg-soft-purple">
-      <div class="container">
-        <h2 class="section-title">Open your account in under two minutes</h2>
-        <div class="steps-three-col">
-          <div class="step-col">
-            <span class="step-num">1</span>
-            <h3>Download and sign up</h3>
-            <p>Verify with your National ID or passport and a quick selfie. Your member ID is created instantly.</p>
-          </div>
-
-          <div class="step-col">
-            <span class="step-num">2</span>
-            <h3>Add money</h3>
-            <p>Fund your wallet with MTN MoMo, Orange Money, a SwychPe agent or a credit union counter.</p>
-          </div>
-
-          <div class="step-col">
-            <span class="step-num">3</span>
-            <h3>Pay, save and borrow</h3>
-            <p>Scan to pay, buy airtime, join a Njangi and apply for a loan from the same app.</p>
-          </div>
-        </div>
-
-        <div class="security-divider"></div>
-
-        <div class="security-header">
-          <h2 class="section-title">Your money is protected</h2>
-          <p class="section-subtitle">SwychPe is operated by a cooperative microfinance institution that follows Cameroonian microfinance regulation.</p>
-        </div>
-
-        <div class="security-grid">
-          <div class="security-card">
-            <div class="card-icon text-purple">🛡</div>
-            <h3>Regulated</h3>
-            <p>Supervised under the CAMCCUL framework, with regular audits and reporting.</p>
-          </div>
-
-          <div class="security-card">
-            <div class="card-icon text-purple">🔒</div>
-            <h3>Secure by design</h3>
-            <p>Biometric login, device checks and 24/7 monitoring that flags unusual activity.</p>
-          </div>
-
-          <div class="security-card">
-            <div class="card-icon text-purple">👥</div>
-            <h3>Owned by members</h3>
-            <p>As a cooperative, SwychPe exists to serve its members, not distant shareholders.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-   
-    <section id="help" class="section-padding bg-white">
-      <div class="container">
-        <h2 class="section-title">Questions people ask</h2>
-        <div class="faq-list">
-          <div 
-            v-for="(faq, idx) in faqList" 
-            :key="idx" 
-            class="faq-item"
-            :class="{ active: openFaq === idx }"
-          >
-            <button class="faq-toggle" @click="openFaq = openFaq === idx ? null : idx">
-              <span class="faq-arrow">►</span>
-              <span class="faq-q-text">{{ faq.q }}</span>
-            </button>
-            <div v-show="openFaq === idx" class="faq-answer">
-              <p>{{ faq.a }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="cta-banner">
-      <div class="container cta-content">
-        <h2 class="cta-heading">Join SwychPe today</h2>
-        <p class="cta-subheading">Banking that fits your pocket and your plans.</p>
-        <div class="cta-buttons">
-          <router-link to="/download" class="btn-app-white">Get it on Google Play</router-link>
-          <router-link to="/download" class="btn-app-outline">Download on the App Store</router-link>
-        </div>
-      </div>
-    </section>
-
-    <Footer />
-  </div>
+  <CtaBand />
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import Navbar from '../components/Navbar.vue'
-import Footer from '../components/Footer.vue'
+import AppIcon from '../components/AppIcon.vue'
+import CtaBand from '../components/CtaBand.vue'
+import FaqList from '../components/FaqList.vue'
+import StatusBadge from '../components/StatusBadge.vue'
+import { accounts, company, faqs } from '../data/site'
+import appIcon from '../assets/brand/icon.png'
 
-const loanAmount = ref(105000)
-const loanDuration = ref(1)
-const openFaq = ref(null)
+const phoneActions = [
+  { label: 'Deposit', icon: 'arrow-down' },
+  { label: 'Withdraw', icon: 'arrow-up' },
+  { label: 'Transfer', icon: 'send' },
+  { label: 'Receive', icon: 'qr' },
+]
 
-const faqList = ref([
-  {
-    q: 'Do I need to visit a branch?',
-    a: 'No, account opening, verification, loans and customer support are handled completely inside the mobile app.'
-  },
-  {
-    q: 'How do I put cash in my account?',
-    a: 'You can deposit cash into your SwychPe wallet using MTN Mobile Money, Orange Money, a credit union counter, or at any authorized SwychPe agent.'
-  },
-  {
-    q: 'Who can get a loan?',
-    a: 'Any verified SwychPe member with an active transaction profile can apply for instant payday advances and SME working capital directly in the app.'
-  },
-  {
-    q: 'Is SwychPe safe?',
-    a: 'Yes. SwychPe is operated by a regulated microfinance cooperative institution under Cameroonian financial framework, with bank-grade encryption and biometric security.'
-  },
-  {
-    q: 'What does it cost?',
-    a: 'Opening an account and transferring funds to other SwychPe users is 0 XAF. All bill payment, airtime, and cashout fees are fully transparent and shown before you confirm.'
-  },
-  {
-    q: 'How does digital Njangi work?',
-    a: 'You can create or join a group with friends or colleagues, set contribution amounts and payout schedules, and SwychPe manages the automated collection and payout transparently.'
-  },
-  {
-    q: 'Can I pay ENEO and CAMWATER bills on SwychPe?',
-    a: 'Yes! You can instantly pay ENEO electricity, CAMWATER, internet bills, and cable TV subscriptions directly from your wallet balance.'
-  },
-  {
-    q: 'How fast are loans paid out?',
-    a: 'Approved loan amounts are credited directly into your SwychPe wallet balance within minutes.'
-  },
-  {
-    q: 'What document do I need to register?',
-    a: 'You only need a valid Cameroonian National ID card or passport alongside a quick selfie to verify your identity.'
-  },
-  {
-    q: 'How do I contact SwychPe customer support?',
-    a: 'You can reach customer support 24/7 through in-app live chat, email at reachswyco@swychr.com, or visit our Buea office at Mayor Street, Molyko.'
-  }
-])
+const phoneTx = [
+  { name: 'MTN MoMo deposit', meta: 'Today · 09:14', amount: '+50,000', dir: 'in' },
+  { name: 'Transfer to Paul N.', meta: 'Yesterday · 18:02', amount: '−25,000', dir: 'out' },
+  { name: 'Payment link received', meta: 'Mon · 11:40', amount: '+12,500', dir: 'in' },
+]
+
+const trust = [
+  { icon: 'landmark', title: 'Cooperative institution', text: 'Owned by its members' },
+  { icon: 'shield-check', title: 'COBAC regulated', text: 'CEMAC microfinance rules' },
+  { icon: 'id', title: 'Full KYC', text: 'ID + liveness verification' },
+  { icon: 'lock', title: 'Encrypted', text: 'TLS in transit, hashed MPIN' },
+]
+
+const liveFeatures = [
+  { icon: 'id', title: 'Open an account in minutes', text: 'Register with your phone number, capture your ID document and complete a liveness selfie. No paperwork, no queue.', to: '/accounts' },
+  { icon: 'arrow-down', title: 'Deposit from mobile money', text: 'Fund your account from MTN Mobile Money, Orange Money and other wallets, or submit a bank transfer deposit.', to: '/pay' },
+  { icon: 'send', title: 'Free member transfers', text: 'Send money to any SwychPe member instantly with a 0% transfer fee and a receipt you can share.', to: '/pay' },
+  { icon: 'arrow-up', title: 'Secure withdrawals', text: 'Withdraw to your mobile wallet. Every withdrawal is confirmed with a one-time code and the fee is shown upfront.', to: '/pay' },
+  { icon: 'qr', title: 'Receive with QR & links', text: 'Show your personal QR code or generate a payment link anyone can use to pay you.', to: '/pay' },
+  { icon: 'file', title: 'Authenticated e-statements', text: 'Generate a digitally signed PDF statement for any date range, emailed to your verified address.', to: '/pay' },
+  { icon: 'layers', title: 'Upgrade your account', text: 'Move from Basic to Student, Mini, Daily Savings or Full Account with Shares, with the quote shown in-app.', to: '/accounts' },
+  { icon: 'activity', title: 'Track every transaction', text: 'Follow pending and failed transactions, re-check deposits and download a slip for every completed payment.' },
+  { icon: 'bell', title: 'Real-time alerts', text: 'Push notifications for credits, debits, KYC decisions and account updates the moment they happen.' },
+]
+
+const steps = [
+  { title: 'Download & register', text: 'Install SwychPe from Google Play and sign up with your Cameroonian mobile number and a one-time code.' },
+  { title: 'Verify your identity', text: 'Photograph your national ID or passport and complete a quick liveness selfie inside the app.' },
+  { title: 'Secure your account', text: 'Set a 4-digit MPIN and, if your phone supports it, enable fingerprint or face unlock.' },
+  { title: 'Fund & start banking', text: 'Deposit from mobile money, then transfer, receive, withdraw and download statements.' },
+]
+
+const security = [
+  { icon: 'key', title: 'MPIN & biometrics', text: 'Every session needs your MPIN or device biometrics; repeated failures lock the account.' },
+  { icon: 'activity', title: 'Login monitoring', text: 'Every sign-in is recorded with its device and network so unusual access can be investigated.' },
+  { icon: 'shield', title: 'OTP confirmations', text: 'Withdrawals and sensitive changes need a one-time code sent to your phone.' },
+  { icon: 'eye', title: 'Liveness KYC', text: 'Selfie liveness checks stop impersonation before an account is ever opened.' },
+]
+
+const roadmap = [
+  { icon: 'qr', title: 'Scan & Pay', text: 'Pay shops, taxis and market stalls by scanning a merchant QR code.' },
+  { icon: 'bolt', title: 'Bills & airtime', text: 'ENEO, CAMWATER, TV subscriptions and airtime for every network.' },
+  { icon: 'users', title: 'Digital Njangi', text: 'Run your contribution group with automatic collection and payouts.' },
+  { icon: 'card', title: 'Cards', text: 'A SwychPe card for online shopping and subscriptions.' },
+]
 </script>
 
 <style scoped>
-
-.page-wrapper {
-  width: 100%;
-  min-height: 100vh;
-  background-color: #f5f3f8;
-  color: #1a0826;
-  font-family: "Bricolage Grotesque", "DM Sans", sans-serif;
-  box-sizing: border-box;
+.hero {
+  padding: 80px 0 96px;
+  overflow: hidden;
 }
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.section-padding {
-  padding: 72px 0;
-}
-
-.bg-white { background-color: #ffffff; }
-.bg-soft-purple { background-color: #f5f3f8; }
-.bg-dark-purple { background-color: #1a052c; }
-
-
-.hero-section {
-  padding: 60px 0 80px 0;
-  background-color: #f5f3f8;
-}
-
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
   align-items: center;
 }
-
-.hero-title {
-  font-size: 3.2rem;
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -1.2px;
-  color: #1a0826;
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 0.82rem;
+  font-weight: 600;
   margin-bottom: 24px;
 }
-
-.hero-description {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: #6b6b6b;
-  margin-bottom: 32px;
+.hero-chip svg {
+  color: var(--gold);
 }
-
-.hero-cta-group {
+.hero-copy .lead {
+  margin: 20px 0 32px;
+  max-width: 580px;
+}
+.store-note {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
+  margin: 18px 0 0;
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+.store-note svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.hero-proof {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  padding: 32px 0 0;
+  margin: 40px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+.hero-proof strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  color: #fff;
+  line-height: 1.1;
+}
+.hero-proof span {
+  font-size: 0.86rem;
+  color: rgba(255, 255, 255, 0.65);
 }
 
-.btn-primary {
-  background-color: #9218BB;
-  color: #ffffff;
-  padding: 14px 28px;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  text-decoration: none;
+/* phone mockup */
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
-
-.btn-secondary {
-  background-color: #eae5f2;
-  color: #1a0826;
-  padding: 14px 28px;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  text-decoration: none;
-}
-
-.phone-frame {
-  width: 320px;
-  margin: 0 auto;
-  background-color: #1a0826;
+.phone {
+  width: 300px;
   border-radius: 40px;
-  padding: 12px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  background: #fff;
+  border: 10px solid #0e0618;
+  box-shadow: 0 40px 80px -24px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  color: var(--ink);
 }
-
-.phone-screen {
-  background-color: #ffffff;
-  border-radius: 30px;
-  padding: 24px 20px;
-  color: #1a0826;
+.ph-head {
+  background: linear-gradient(150deg, var(--brand-deep), var(--brand) 70%, #9c27b0);
+  color: #fff;
+  padding: 22px 20px 26px;
 }
-
-.greeting-sub { display: block; font-size: 0.75rem; color: #888; }
-.user-name { font-size: 1.1rem; font-weight: 800; }
-
-.wallet-card {
-  background-color: #9218BB;
-  color: #ffffff;
-  border-radius: 16px;
-  padding: 18px;
-  margin: 16px 0;
+.ph-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
 }
-
-.wallet-label { font-size: 0.75rem; opacity: 0.9; }
-.wallet-amount { font-size: 1.5rem; font-weight: 800; margin-top: 4px; }
-
-.action-grid {
+.ph-top small {
+  display: block;
+  font-size: 0.7rem;
+  opacity: 0.75;
+}
+.ph-top strong {
+  font-size: 0.92rem;
+}
+.ph-logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.35);
+}
+.ph-bell {
+  margin-left: auto;
+  opacity: 0.85;
+}
+.ph-label,
+.ph-live {
+  font-size: 0.72rem;
+  opacity: 0.75;
+}
+.ph-bal {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin: 2px 0;
+}
+.ph-actions {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  text-align: center;
-  margin-bottom: 16px;
+  gap: 6px;
+  padding: 16px 14px;
+  margin-top: -14px;
+  background: #fff;
+  border-radius: 18px 18px 0 0;
+  position: relative;
 }
-
-.action-item { font-size: 0.7rem; font-weight: 600; color: #555; }
-.action-icon {
-  background-color: #f5f3f8;
-  border-radius: 12px;
-  padding: 10px;
-  font-size: 1rem;
-  margin-bottom: 4px;
+.ph-actions span {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--ink-2);
 }
-
-.advance-box {
-  background-color: #fcf8ff;
-  border: 1px solid #f0e6f7;
-  border-radius: 12px;
-  padding: 12px 14px;
+.ph-actions i {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: var(--brand-50);
+  color: var(--brand);
+}
+.ph-list {
+  padding: 4px 16px 22px;
+}
+.ph-list-title {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin: 6px 0 8px;
+}
+.ph-tx {
   display: flex;
   align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.78rem;
+}
+.ph-tx:last-child {
+  border: 0;
+}
+.ph-tx strong {
+  display: block;
+  font-size: 0.78rem;
+}
+.ph-tx small {
+  color: var(--muted);
+  font-size: 0.68rem;
+}
+.ph-tx i {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.ph-tx i.in {
+  background: var(--success-soft);
+  color: var(--success);
+}
+.ph-tx i.out {
+  background: var(--brand-50);
+  color: var(--brand);
+}
+.ph-tx b {
+  margin-left: auto;
+  font-size: 0.8rem;
+}
+.ph-tx b.in {
+  color: var(--success);
+}
+.float {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  color: var(--ink);
+}
+.float .icon-tile {
+  width: 36px;
+  height: 36px;
+  margin: 0;
+}
+.float strong {
+  display: block;
+  font-size: 0.86rem;
+}
+.float small {
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+.f1 {
+  top: 18%;
+  left: -4%;
+}
+.f2 {
+  bottom: 14%;
+  right: -4%;
+}
+
+/* trust strip */
+.trust {
+  border-bottom: 1px solid var(--line);
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.trust-item {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 28px 20px;
+  border-right: 1px solid var(--line);
+}
+.trust-item:last-child {
+  border-right: 0;
+}
+.trust-item svg {
+  color: var(--brand);
+  flex-shrink: 0;
+}
+.trust-item strong {
+  display: block;
+  font-size: 0.95rem;
+}
+.trust-item span {
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.more {
+  margin-top: 18px;
+  font-size: 0.9rem;
+}
+
+/* steps */
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  counter-reset: s;
+}
+.steps li {
+  position: relative;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+.step-n {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--brand-200);
+  display: block;
+  margin-bottom: 12px;
+}
+.steps h3 {
+  font-size: 1.1rem;
+}
+.steps p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+/* accounts preview */
+.split-head {
+  display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.split-head .section-head {
+  margin-bottom: 0;
+}
+.acct-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+.acct {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.acct:hover {
+  border-color: var(--brand-200);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+.acct.featured {
+  background: linear-gradient(160deg, var(--brand-50), #fff);
+  border-color: var(--brand-200);
+}
+.acct .badge {
+  align-self: flex-start;
+  margin-bottom: 12px;
+}
+.acct h3 {
+  font-size: 1.08rem;
+}
+.acct p {
+  font-size: 0.86rem;
+  color: var(--muted);
+  flex: 1;
+}
+.acct dl {
+  margin: 0;
+  display: grid;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.acct dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.8rem;
+}
+.acct dt {
+  color: var(--muted);
+}
+.acct dd {
+  margin: 0;
+  font-weight: 700;
+  text-align: right;
+}
+
+/* security */
+.sec-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+  align-items: center;
+}
+.sec-grid .lead {
+  margin-bottom: 28px;
+}
+.sec-card {
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.sec-card h3 {
+  font-size: 1.08rem;
+}
+.sec-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.road-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 64px;
+}
+.faq-grid .lead {
   margin-bottom: 16px;
 }
 
-.advance-text strong { display: block; font-size: 0.8rem; color: #9218BB; }
-.advance-text p { font-size: 0.75rem; color: #666; margin: 0; }
-.btn-claim { border: none; background: transparent; color: #9218BB; font-size: 0.8rem; font-weight: 800; cursor: pointer; }
-
-.recent-list { font-size: 0.72rem; }
-.tx-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f0f0f0; }
-.tx-amount { font-weight: 700; color: #333; }
-
-
-.section-header { margin-bottom: 40px; }
-.section-title { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 8px; }
-.section-subtitle { font-size: 1rem; color: #6b6b6b; margin: 0; }
-
-
-.payments-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.payment-card { border-radius: 20px; padding: 32px 24px; }
-.featured-purple { background-color: #9218BB; color: #ffffff; }
-.featured-purple h3, .featured-purple p { color: #ffffff; }
-.border-card { background-color: #f8f6fc; border: 1px solid #eae5f2; }
-.card-icon { font-size: 1.5rem; margin-bottom: 16px; }
-.text-purple { color: #9218BB; }
-.payment-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; }
-.payment-card p { font-size: 0.9rem; color: #fff; line-height: 1.5; margin-bottom: 16px; }
-
-.pill-group { display: flex; flex-wrap: wrap; gap: 8px; }
-.pill-badge { background-color: #ffffff; color: #9218BB; font-size: 0.75rem; font-weight: 700; padding: 6px 14px; border-radius: 999px; }
-
-
-.borrow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-.borrow-desc { color: #b3a5c2; font-size: 1rem; line-height: 1.6; margin-bottom: 24px; }
-.tab-options { display: flex; gap: 8px; margin-bottom: 16px; }
-.tab-btn { background-color: rgba(255, 255, 255, 0.1); color: #ffffff; border: none; padding: 10px 18px; border-radius: 999px; font-weight: 700; font-size: 0.85rem; cursor: pointer; }
-.tab-btn.active { background-color: #fbc02d; color: #1a0826; }
-.tab-caption { font-size: 0.9rem; color: #d1c4e9; line-height: 1.5; margin-bottom: 24px; }
-.dark-pill { background-color: rgba(255, 255, 255, 0.08); color: #d1c4e9; }
-
-.calculator-card { background-color: #260e3d; border-radius: 24px; padding: 36px; border: 1px solid rgba(255, 255, 255, 0.1); }
-.calc-group { margin-bottom: 24px; }
-.calc-group label { display: block; font-size: 0.85rem; color: #b3a5c2; margin-bottom: 8px; }
-.calc-amount { font-size: 2.2rem; font-weight: 800; color: #ffffff; margin-bottom: 12px; }
-.range-slider { width: 100%; accent-color: #fbc02d; cursor: pointer; }
-
-.calc-summary { display: flex; justify-content: space-between; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; margin-bottom: 16px; }
-.summary-col span { display: block; font-size: 0.75rem; color: #b3a5c2; }
-.summary-col strong { font-size: 1.2rem; color: #ffffff; }
-.calc-disclaimer { font-size: 0.72rem; color: #8c7b9e; margin: 0; }
-
-
-.save-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.save-card { background-color: #f8f6fc; border-radius: 20px; padding: 32px 28px; }
-.save-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; }
-.save-card p { font-size: 0.9rem; color: #666; line-height: 1.5; margin: 0; }
-.solid-purple { background-color: #9218BB; color: #ffffff; }
-.solid-purple h3, .solid-purple p { color: #ffffff; }
-
-
-.business-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.biz-card { background-color: #ffffff; border-radius: 20px; padding: 32px 28px; border: 1px solid #eae5f2; }
-.biz-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 8px; }
-.biz-card p { font-size: 0.9rem; color: #666; line-height: 1.5; margin: 0; }
-
-
-.more-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.more-card { background-color: #f8f6fc; border-radius: 16px; padding: 24px 20px; }
-.more-card h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 6px; }
-.more-card p { font-size: 0.85rem; color: #666; line-height: 1.5; margin: 0; }
-.card-title-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
-.tag-coming { background-color: #fbc02d; color: #1a0826; font-size: 0.68rem; font-weight: 800; padding: 4px 10px; border-radius: 999px; }
-
-.steps-three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 60px; }
-.step-col { position: relative; }
-.step-num { font-size: 2rem; font-weight: 800; color: #9218BB; display: block; margin-bottom: 8px; }
-.step-col h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 6px; }
-.step-col p { font-size: 0.88rem; color: #666; line-height: 1.5; margin: 0; }
-
-.security-divider { height: 1px; background-color: #eae5f2; margin-bottom: 60px; }
-.security-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.security-card { background-color: #ffffff; border-radius: 20px; padding: 28px 24px; border: 1px solid #eae5f2; }
-.security-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 6px; }
-.security-card p { font-size: 0.85rem; color: #666; line-height: 1.5; margin: 0; }
-
-
-.faq-list { max-width: 1000px; }
-.faq-item { border-bottom: 1px solid #eae5f2; }
-.faq-toggle { width: 100%; text-align: left; background: transparent; border: none; padding: 18px 0; font-size: 1.05rem; font-weight: 700; color: #1a0826; cursor: pointer; display: flex; align-items: center; gap: 12px; }
-.faq-arrow { font-size: 0.7rem; color: #9218BB; transition: transform 0.2s; }
-.faq-item.active .faq-arrow { transform: rotate(90deg); }
-.faq-answer { padding-bottom: 18px; padding-left: 24px; color: #666; font-size: 0.9rem; line-height: 1.6; }
-
-
-.cta-banner { background-color: #9218BB; color: #ffffff; padding: 80px 0; text-align: center; }
-.cta-heading { font-size: 2.8rem; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.8px; }
-.cta-subheading { font-size: 1.1rem; opacity: 0.9; margin-bottom: 32px; }
-.cta-buttons { display: flex; justify-content: center; gap: 16px; }
-.btn-app-white { background-color: #ffffff; color: #9218BB; padding: 14px 28px; border-radius: 999px; font-weight: 800; text-decoration: none; font-size: 0.95rem; }
-.btn-app-outline { border: 2px solid #ffffff; color: #ffffff; padding: 14px 28px; border-radius: 999px; font-weight: 800; text-decoration: none; font-size: 0.95rem; }
-
-
-@media (max-width: 992px) {
-  .hero-grid, .borrow-grid { grid-template-columns: 1fr; }
-  .payments-grid, .more-services-grid, .steps-three-col, .security-grid { grid-template-columns: 1fr 1fr; }
-  .hero-title { font-size: 2.5rem; }
+@media (max-width: 1100px) {
+  .acct-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
-
-@media (max-width: 768px) {
-  .payments-grid, .save-grid, .business-grid, .more-services-grid, .steps-three-col, .security-grid { grid-template-columns: 1fr; }
-  .cta-buttons { flex-direction: column; align-items: center; }
+@media (max-width: 960px) {
+  .hero-grid,
+  .sec-grid,
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .trust-grid,
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .trust-item:nth-child(2) {
+    border-right: 0;
+  }
+  .split-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .acct-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .hero {
+    padding: 56px 0 72px;
+  }
+  .hero-proof {
+    gap: 24px;
+  }
+  .hero-proof strong {
+    font-size: 1.5rem;
+  }
+  .trust-grid,
+  .steps,
+  .acct-row {
+    grid-template-columns: 1fr;
+  }
+  .trust-item {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .phone {
+    width: 270px;
+  }
+  .f1 {
+    left: 0;
+  }
+  .f2 {
+    right: 0;
+  }
 }
 </style>

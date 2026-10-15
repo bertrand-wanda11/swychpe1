@@ -57,9 +57,10 @@ const pillars = [
 const facts = [
   { k: 'Legal entity', v: company.legalName },
   { k: 'Short name', v: company.shortLegal },
-  { k: 'Type', v: 'Cooperative financial institution' },
-  { k: 'Network', v: 'Cameroon Cooperative Credit Union League (CamCCUL)' },
-  { k: 'Supervisor', v: 'Central African Banking Commission (COBAC)' },
+  { k: 'Registration / Matriculation No.', v: company.registrationNo },
+  { k: 'Type', v: company.category },
+  { k: 'Supervision', v: `Cameroon Cooperative Credit Union League (CAMCCUL), ${company.camcculLetter}` },
+  { k: 'Regulatory authority', v: 'Central African Banking Commission (COBAC) and Ministry of Finance (MINFI)' },
   { k: 'Headquarters', v: company.address },
   { k: 'Contact', v: company.email },
   { k: 'Products', v: 'SwychPe mobile app (Android, iOS)' },

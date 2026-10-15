@@ -44,13 +44,33 @@
     <div class="container">
       <div class="disclosure">
         <AppIcon name="shield-check" :size="18" />
-        <p>
-          SwychPe is a product of {{ company.legalName }} ({{ company.shortLegal }}), a cooperative financial
-          institution affiliated with the Cameroon Cooperative Credit Union League (CamCCUL) and operating under the
-          microfinance regulations of the Central African Banking Commission (COBAC). Fees, eligibility and limits
-          are shown in the app before you confirm any transaction. Features marked "coming soon" are not yet
-          available.
-        </p>
+        <div>
+          <h4>Regulatory &amp; legal notice</h4>
+          <p>
+            <strong>SwychPe</strong> is a financial technology brand and mobile platform provided by
+            <strong>{{ company.legalName }} ({{ company.shortLegal }})</strong>.
+          </p>
+          <dl class="reg">
+            <div><dt>Registration / Matriculation No.</dt><dd class="mono">{{ company.registrationNo }}</dd></div>
+            <div>
+              <dt>Regulatory supervision</dt>
+              <dd>
+                {{ company.category }} supervised by the Cameroon Cooperative Credit Union League (CAMCCUL) under
+                {{ company.camcculLetter }}.
+              </dd>
+            </div>
+            <div>
+              <dt>Regulatory authority</dt>
+              <dd>Central African Banking Commission (COBAC) and the Ministry of Finance (MINFI), Cameroon.</dd>
+            </div>
+          </dl>
+          <p>
+            All funds, user deposits, account balances and micro-credit facilities made available through the SwychPe
+            mobile application are held and administered directly by {{ company.shortLegal }}. Fees, eligibility and
+            limits are shown in the app before you confirm any transaction. Features marked "coming soon" are not yet
+            available.
+          </p>
+        </div>
       </div>
     </div>
 
@@ -194,8 +214,48 @@ const columns = [
   flex-shrink: 0;
   color: var(--gold);
 }
+.disclosure h4 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
 .disclosure p {
+  margin: 0 0 10px;
+}
+.disclosure p:last-child {
   margin: 0;
+}
+.disclosure strong {
+  color: rgba(255, 255, 255, 0.85);
+}
+.reg {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 12px 0 14px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.reg dt {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2px;
+}
+.reg dd {
+  margin: 0;
+}
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  word-break: break-all;
+  color: var(--gold);
+}
+@media (max-width: 760px) {
+  .reg {
+    grid-template-columns: 1fr;
+  }
 }
 .f-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);

@@ -15,8 +15,8 @@ export const company = {
   playStore: 'https://play.google.com/store/apps/details?id=com.swychr.swychpe',
   // Direct APK while the store listings await approval. apkDownload starts the
   // download; apkDrive is the Drive preview page as a fallback.
-  apkDownload: 'https://drive.google.com/uc?export=download&id=14pzTr2Q2VRGgeTPkwD02omH3rkBfUBMP',
-  apkDrive: 'https://drive.google.com/file/d/14pzTr2Q2VRGgeTPkwD02omH3rkBfUBMP/view?usp=sharing',
+  apkDownload: 'https://drive.google.com/uc?export=download&id=1SRLrQmkDDx-XqyacYCR-vN7oqiE7c0VI',
+  apkDrive: 'https://drive.google.com/file/d/1SRLrQmkDDx-XqyacYCR-vN7oqiE7c0VI/view?usp=sharing',
   appStore: 'https://apps.apple.com/',
 }
 

@@ -24,8 +24,7 @@ const routes = [
   { path: '/account-deletion', redirect: '/delete-account' },
   { path: '/services', redirect: '/accounts' },
   { path: '/Started', redirect: '/early-access' },
-  { path: '/:pathMatch(.*)*', name: 'not-found', component: () => import('../views/NotFoundView.vue'), meta: { title: 'Page not found' } },
-  // Blog routes
+// Blog routes
   {
     path: '/blog',
     name: 'blog',
@@ -36,7 +35,8 @@ const routes = [
     path: '/blog/:slug',
     name: 'blog-post',
     component: () => import('../views/BlogPostView.vue')
-  }
+  },
+  { path: '/:pathMatch(.*)*', name: 'not-found', component: () => import('../views/NotFoundView.vue'), meta: { title: 'Page not found' } }
 ]
 
 const router = createRouter({

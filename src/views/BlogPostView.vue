@@ -1,58 +1,55 @@
 <template>
-  <div class="min-h-screen flex flex-col justify-between bg-white">
-    <main class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 flex-1">
-      <!-- Loading State -->
-      <div v-if="loading" class="text-center py-20 text-gray-500 font-medium">
+  <div>
+    <!-- Loading State -->
+    <div v-if="loading" class="section">
+      <div class="container text-center py-20 text-gray-500 font-medium">
         Loading article...
       </div>
+    </div>
 
-      <!-- Not Found -->
-      <div v-else-if="!post" class="text-center py-20">
-        <h1 class="text-2xl font-bold text-gray-800">Post not found</h1>
-        <router-link to="/blog" class="mt-4 inline-block text-[#00a86b] font-semibold underline">
+    <!-- Not Found State -->
+    <div v-else-if="!post" class="section">
+      <div class="container text-center py-20">
+        <h2 class="text-2xl font-bold mb-4">Post not found</h2>
+        <router-link to="/blog" class="text-[#00a86b] font-semibold underline">
           ← Back to Blog
         </router-link>
       </div>
+    </div>
 
-      <!-- Article Content -->
-      <article v-else class="max-w-3xl mx-auto">
-        <div class="mb-6">
-          <router-link to="/blog" class="inline-flex items-center text-xs font-semibold text-[#00a86b] uppercase tracking-wide hover:underline">
-            ← Back to Blog
-          </router-link>
-        </div>
+    <!-- Article Content -->
+    <div v-else>
+      <PageHero
+        crumb="Blog"
+        :eyebrow="post.category || 'Article'"
+        :title="post.title"
+        :lead="post.callout || ''"
+      />
 
-        <header class="mb-8">
-          <div class="flex items-center gap-3 text-xs font-medium text-gray-500 mb-4">
-            <span class="px-2.5 py-1 bg-gray-100 rounded-full font-semibold text-gray-700">
-              {{ post.category || 'General' }}
-            </span>
-            <span>•</span>
+      <section class="section">
+        <div class="container max-w-3xl mx-auto">
+          <div class="mb-6">
+            <router-link to="/blog" class="text-xs font-semibold text-[#00a86b] uppercase tracking-wider hover:underline">
+              ← Back to Blog
+            </router-link>
+          </div>
+
+          <div class="flex items-center gap-3 text-xs text-gray-500 mb-8 border-b border-gray-100 pb-4">
             <time :datetime="post.publishedAt">{{ formatDate(post.publishedAt) }}</time>
             <span v-if="post.author">•</span>
             <span v-if="post.author">By {{ post.author }}</span>
           </div>
 
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
-            {{ post.title }}
-          </h1>
+          <figure v-if="post.imageUrl" class="mb-10 rounded-xl overflow-hidden shadow-sm">
+            <img :src="post.imageUrl" :alt="post.title" class="w-full h-auto object-cover max-h-[500px]" />
+          </figure>
 
-          <p v-if="post.callout" class="mt-6 text-lg text-gray-600 italic border-l-4 border-[#00a86b] pl-4">
-            {{ post.callout }}
-          </p>
-        </header>
-
-        <!-- Main Featured Image -->
-        <figure v-if="post.imageUrl" class="mb-10 rounded-2xl overflow-hidden shadow-sm">
-          <img :src="post.imageUrl" :alt="post.title" class="w-full h-auto object-cover max-h-[500px]" />
-        </figure>
-
-        <!-- Portable Text Rich Body -->
-        <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed space-y-4">
-          <PortableText v-if="post.body" :value="post.body" />
+          <div class="prose max-w-none text-gray-800 leading-relaxed text-base md:text-lg">
+            <PortableText v-if="post.body" :value="post.body" />
+          </div>
         </div>
-      </article>
-    </main>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -60,6 +57,7 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { PortableText } from '@portabletext/vue';
+import PageHero from '../components/PageHero.vue';
 import { sanityClient } from '../services/sanity';
 
 const route = useRoute();

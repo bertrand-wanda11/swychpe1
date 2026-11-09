@@ -83,17 +83,19 @@ const formatDate = (dateStr) => {
 
 const fetchPosts = async () => {
   loading.value = true;
-  const query = `*[_type == "post" && (site == "swychpe" || site == "all")] | order(publishedAt desc) {
+  const query = `*[_type == "post" && (site == "swychpe" || site == "all" || target == "swychpe")] | order(publishedAt desc) {
     _id,
     title,
     "slug": slug.current,
-    "category": category->title,
+    "category": coalesce(category->title, category, "Banking"),
     excerpt,
     publishedAt,
     "imageUrl": mainImage.asset->url
   }`;
   try {
-    posts.value = await sanityClient.fetch(query);
+    const data = await sanityClient.fetch(query);
+    console.log('Fetched Sanity posts:', data);
+    posts.value = data || [];
   } catch (err) {
     console.error('Failed to load blog posts:', err);
   } finally {

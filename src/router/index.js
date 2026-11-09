@@ -17,7 +17,7 @@ const routes = [
   { path: '/download', name: 'download', component: () => import('../views/DownloadView.vue'), meta: { title: 'Download the app' } },
   { path: '/privacy', name: 'privacy', component: () => import('../views/PrivacyView.vue'), meta: { title: 'Privacy policy' } },
   { path: '/terms', name: 'terms', component: () => import('../views/TermView.vue'), meta: { title: 'Terms & conditions' } },
-  // Play Console "Delete account URL" and "Delete data URL".
+  // Play Console "Delete account URL" and "Delete data URL"
   { path: '/delete-account', name: 'delete-account', component: () => import('../views/DeleteAccountView.vue'), meta: { title: 'Delete your account' } },
   { path: '/delete-data', name: 'delete-data', component: () => import('../views/DeleteDataView.vue'), meta: { title: 'Delete your data' } },
   { path: '/delete_account', redirect: '/delete-account' },
@@ -25,6 +25,18 @@ const routes = [
   { path: '/services', redirect: '/accounts' },
   { path: '/Started', redirect: '/early-access' },
   { path: '/:pathMatch(.*)*', name: 'not-found', component: () => import('../views/NotFoundView.vue'), meta: { title: 'Page not found' } },
+  // Blog routes
+  {
+    path: '/blog',
+    name: 'blog',
+    component: () => import('../views/BlogView.vue'),
+    meta: { title: 'Blog' }
+  },
+  {
+    path: '/blog/:slug',
+    name: 'blog-post',
+    component: () => import('../views/BlogPostView.vue')
+  }
 ]
 
 const router = createRouter({

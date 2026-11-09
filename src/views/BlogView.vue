@@ -1,6 +1,6 @@
 <template>
   <div class="page-wrapper flex flex-col justify-between">
-    <Navbar />
+    <SiteNavbar />
 
     <main class="max-w-6xl mx-auto px-6 py-16 flex-1 w-full">
       <header class="text-center max-w-2xl mx-auto mb-16">
@@ -67,14 +67,14 @@
       </div>
     </main>
 
-    <Footer />
+    <SiteFooter />
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import Navbar from '../components/Navbar.vue';
-import Footer from '../components/Footer.vue';
+import SiteNavbar from '../components/SiteNavbar.vue';
+import SiteFooter from '../components/SiteFooter.vue';
 import { sanityClient } from '../services/sanity';
 
 const posts = ref([]);

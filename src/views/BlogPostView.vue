@@ -1,6 +1,6 @@
 <template>
   <div class="page-wrapper flex flex-col justify-between">
-    <Navbar />
+    <SiteNavbar />
 
     <main class="max-w-3xl mx-auto px-6 py-12 flex-1 w-full">
       <!-- Loading State -->
@@ -56,7 +56,7 @@
       </article>
     </main>
 
-    <Footer />
+    <SiteFooter />
   </div>
 </template>
 
@@ -64,8 +64,8 @@
 import { ref, watch, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { PortableText } from '@portabletext/vue';
-import Navbar from '../components/Navbar.vue';
-import Footer from '../components/Footer.vue';
+import SiteNavbar from '../components/SiteNavbar.vue';
+import SiteFooter from '../components/SiteFooter.vue';
 import { sanityClient } from '../services/sanity';
 
 const route = useRoute();

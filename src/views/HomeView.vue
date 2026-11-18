@@ -9,17 +9,22 @@
           SwychPe is the banking app of Swychr Cooperative. Open an account from your phone, verify your identity in
           minutes, and deposit, transfer, withdraw and download statements without visiting a branch.
         </p>
-        <div class="btn-row">
-          <router-link to="/early-access" class="btn btn-gold">
-            Claim your early invite <AppIcon name="arrow-right" :size="18" />
-          </router-link>
-          <a :href="company.apkDownload" rel="noopener" class="btn btn-ghost-light">
-            <AppIcon name="download" :size="16" /> Download APK
-          </a>
-        </div>
-        <p class="store-note">
-          <AppIcon name="clock" :size="14" /> Google Play &amp; App Store listings awaiting approval — Android APK available now.
-        </p>
+       <div class="btn-row">
+  <a
+    href="https://play.google.com/store/apps/details?id=com.swychr.swychpe"
+    target="_blank"
+    rel="noopener"
+    class="btn btn-gold"
+  >
+    Get it on Google Play <AppIcon name="arrow-right" :size="18" />
+  </a>
+  <router-link to="/download" class="btn btn-ghost-light">
+    <AppIcon name="download" :size="16" /> Download options
+  </router-link>
+</div>
+<p class="store-note">
+  <AppIcon name="check-circle" :size="14" /> Available now on Google Play · Apple App Store coming soon.
+</p>
         <ul class="hero-proof">
           <li><strong>0 XAF</strong><span>member transfers</span></li>
           <li><strong>5</strong><span>account tiers</span></li>

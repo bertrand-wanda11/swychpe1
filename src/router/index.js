@@ -11,10 +11,11 @@ const routes = [
   { path: '/security', name: 'security', component: () => import('../views/SecurityView.vue'), meta: { title: 'Security' } },
   { path: '/help', name: 'help', component: () => import('../views/HelpView.vue'), meta: { title: 'Help centre' } },
   { path: '/about', name: 'about', component: () => import('../views/AboutView.vue'), meta: { title: 'About us' } },
-  { path: '/early-access', name: 'early-access', component: () => import('../views/EarlyAccessView.vue'), meta: { title: 'Early access invite' } },
-  { path: '/invite', redirect: '/early-access' },
-  { path: '/early-invite', redirect: '/early-access' },
-  { path: '/download', name: 'download', component: () => import('../views/DownloadView.vue'), meta: { title: 'Download the app' } },
+ { path: '/early-access', redirect: '/download' },
+  { path: '/invite', redirect: '/download' },
+  { path: '/early-invite', redirect: '/download' },
+  { path: '/download', name: 'download', component: () => import('../views/DownloadView.vue'), 
+    meta: { title: 'Download SwychPe' } },
   { path: '/privacy', name: 'privacy', component: () => import('../views/PrivacyView.vue'), meta: { title: 'Privacy policy' } },
   { path: '/terms', name: 'terms', component: () => import('../views/TermView.vue'), meta: { title: 'Terms & conditions' } },
   // Play Console "Delete account URL" and "Delete data URL"
@@ -23,7 +24,7 @@ const routes = [
   { path: '/delete_account', redirect: '/delete-account' },
   { path: '/account-deletion', redirect: '/delete-account' },
   { path: '/services', redirect: '/accounts' },
-  { path: '/Started', redirect: '/early-access' },
+  { path: '/Started', redirect: '/download' },
 // Blog routes
   {
     path: '/blog',

@@ -3,7 +3,7 @@
     crumb="Download"
     eyebrow="Get the app"
     title="Download SwychPe"
-    lead="SwychPe is awaiting approval on Google Play and the App Store. Android users can install the official app now, directly from our website."
+    lead="SwychPe is now available on Google Play and coming soon on the App Store"
   >
     <template #aside>
       <div class="app-tile">
@@ -15,17 +15,22 @@
         </div>
       </div>
     </template>
-    <a :href="company.apkDownload" rel="noopener" class="store primary">
+   <a
+      href="https://play.google.com/store/apps/details?id=com.swychr.swychpe"
+      target="_blank"
+      rel="noopener"
+      class="store primary"
+    >
       <AppIcon name="download" :size="26" />
-      <span><small>ANDROID · AVAILABLE NOW</small>Download APK</span>
+      <span><small>GET IT ON</small>Google Play</span>
+    </a>
+    <a :href="company.apkDownload" rel="noopener" class="store">
+      <AppIcon name="download" :size="26" />
+      <span><small>ANDROID · DIRECT</small>Download APK</span>
     </a>
     <span class="store disabled" aria-disabled="true">
       <AppIcon name="clock" :size="26" />
-      <span><small>AWAITING APPROVAL</small>Google Play</span>
-    </span>
-    <span class="store disabled" aria-disabled="true">
-      <AppIcon name="clock" :size="26" />
-      <span><small>AWAITING APPROVAL</small>App Store</span>
+      <span><small>COMING SOON</small>App Store</span>
     </span>
   </PageHero>
 
@@ -84,7 +89,7 @@
     </div>
   </section>
 
-  <CtaBand title="No app yet? Claim your invite first" text="Verify your number and email on the web and your Basic Account is ready when you install." />
+  <CtaBand title="Ready to get started? Download SwychPe on Android" text="Verify your number and email on the web and your Basic Account is ready when you install." />
 </template>
 
 <script setup>
@@ -95,9 +100,9 @@ import { company } from '../data/site'
 import appIcon from '../assets/brand/icon.png'
 
 const statuses = [
+  { name: 'Google Play', state: 'Available now', icon: 'download', wait: false },
   { name: 'Android APK', state: 'Available now', icon: 'download', wait: false },
-  { name: 'Google Play', state: 'Awaiting approval', icon: 'smartphone', wait: true },
-  { name: 'Apple App Store', state: 'Awaiting approval', icon: 'smartphone', wait: true },
+  { name: 'Apple App Store', state: 'Coming soon', icon: 'smartphone', wait: true },
 ]
 
 const installSteps = [

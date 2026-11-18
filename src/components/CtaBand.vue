@@ -7,8 +7,8 @@
           <p>{{ text }}</p>
         </div>
         <div class="btn-row">
-          <router-link to="/early-access" class="btn btn-gold">
-            Get early access <AppIcon name="arrow-right" :size="18" />
+          <router-link to="/download" class="btn btn-gold">
+           Download SwychPe <AppIcon name="arrow-right" :size="18" />
           </router-link>
           <a :href="company.apkDownload" rel="noopener" class="btn btn-ghost-light">
             <AppIcon name="download" :size="18" /> Download APK

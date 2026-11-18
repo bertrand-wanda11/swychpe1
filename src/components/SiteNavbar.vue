@@ -57,7 +57,7 @@
       </nav>
 
       <div class="nav-actions">
-        <router-link to="/early-access" class="btn btn-primary nav-cta"><span class="cta-dot" /> Get early access</router-link>
+        <router-link to="/download" class="btn btn-primary nav-cta"><span class="cta-dot" /> Download The App</router-link>
         <button
           class="burger"
           :aria-expanded="mobileOpen"
@@ -83,7 +83,7 @@
           <router-link to="/help" class="m-link" @click="close"><AppIcon name="help" :size="18" /> Help centre</router-link>
           <router-link to="/download" class="m-link" @click="close"><AppIcon name="download" :size="18" /> Download the app</router-link>
         </div>
-        <router-link to="/early-access" class="btn btn-primary m-cta" @click="close">Get early access</router-link>
+        <router-link to="/download" class="btn btn-primary m-cta" @click="close">Download the App</router-link>
       </div>
     </transition>
   </header>

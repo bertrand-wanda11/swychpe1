@@ -12,11 +12,11 @@
           <a :href="company.apkDownload" rel="noopener" class="store-chip">
             <AppIcon name="download" :size="16" /> Download APK
           </a>
-          <router-link to="/early-access" class="store-chip">
-            <AppIcon name="award" :size="16" /> Early access
+          <router-link to="/download" class="store-chip">
+            <AppIcon name="award" :size="16" /> Download SwychPe
           </router-link>
         </div>
-        <p class="store-wait">Google Play &amp; App Store listings awaiting approval.</p>
+        <p class="store-wait">SwychPe is live on Google Play  &amp; App Store listing is  awaiting approval.</p>
       </div>
 
       <div v-for="col in columns" :key="col.title" class="f-col">
@@ -109,6 +109,7 @@ const columns = [
     title: 'Company',
     links: [
       { to: '/about', label: 'About us' },
+      { to: '/blog', label: 'Blog' },
       { to: '/business', label: 'Business' },
       { to: '/security', label: 'Security' },
       { to: '/help', label: 'Help centre' },

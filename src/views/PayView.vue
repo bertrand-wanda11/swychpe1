@@ -5,7 +5,7 @@
     title="Move money in, out and across — in seconds"
     lead="Deposit from mobile money, send to any member for free, get paid by QR or link, and withdraw with a one-time code. Every fee is shown before you confirm."
   >
-    <router-link to="/early-access" class="btn btn-gold">Get early access</router-link>
+    <router-link to="/download" class="btn btn-gold">Get early access</router-link>
     <a href="#fees" class="btn btn-ghost-light">See fees</a>
   </PageHero>
 

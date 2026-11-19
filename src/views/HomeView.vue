@@ -18,12 +18,20 @@
   >
     Get it on Google Play <AppIcon name="arrow-right" :size="18" />
   </a>
+   <a
+    href="https://apps.apple.com/us/app/swychpe/id6823080943"
+    target="_blank"
+    rel="noopener"
+    class="btn btn-gold"
+  >
+    Get it on App Store <AppIcon name="arrow-right" :size="18" />
+  </a>
   <router-link to="/download" class="btn btn-ghost-light">
     <AppIcon name="download" :size="16" /> Download options
   </router-link>
 </div>
 <p class="store-note">
-  <AppIcon name="check-circle" :size="14" /> Available now on Google Play · Apple App Store coming soon.
+  <AppIcon name="check-circle" :size="14" /> Available now on Google Play & App Store.
 </p>
         <ul class="hero-proof">
           <li><strong>0 XAF</strong><span>member transfers</span></li>

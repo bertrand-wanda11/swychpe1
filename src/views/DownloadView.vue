@@ -3,7 +3,7 @@
     crumb="Download"
     eyebrow="Get the app"
     title="Download SwychPe"
-    lead="SwychPe is now available on Google Play and coming soon on the App Store"
+    lead="SwychPe is now available on Google Play &  App Store"
   >
     <template #aside>
       <div class="app-tile">
@@ -24,14 +24,20 @@
       <AppIcon name="download" :size="26" />
       <span><small>GET IT ON</small>Google Play</span>
     </a>
+    <a
+      href="https://apps.apple.com/us/app/swychpe/id6823080943"
+      target="_blank"
+      rel="noopener"
+      class="store primary"
+    >
+      <AppIcon name="download" :size="26" />
+      <span><small>GET IT ON</small>App Store</span>
+    </a>
     <a :href="company.apkDownload" rel="noopener" class="store">
       <AppIcon name="download" :size="26" />
       <span><small>ANDROID · DIRECT</small>Download APK</span>
     </a>
-    <span class="store disabled" aria-disabled="true">
-      <AppIcon name="clock" :size="26" />
-      <span><small>COMING SOON</small>App Store</span>
-    </span>
+    
   </PageHero>
 
   <section class="section-sm status-band">
@@ -89,7 +95,7 @@
     </div>
   </section>
 
-  <CtaBand title="Ready to get started? Download SwychPe on Android" text="Verify your number and email on the web and your Basic Account is ready when you install." />
+  <CtaBand title="Ready to get started? Download SwychPe on Android & IOS" text="Verify your number and email on the web and your Basic Account is ready when you install." />
 </template>
 
 <script setup>
@@ -102,7 +108,7 @@ import appIcon from '../assets/brand/icon.png'
 const statuses = [
   { name: 'Google Play', state: 'Available now', icon: 'download', wait: false },
   { name: 'Android APK', state: 'Available now', icon: 'download', wait: false },
-  { name: 'Apple App Store', state: 'Coming soon', icon: 'smartphone', wait: true },
+  { name: 'Apple App Store', state: 'Available now', icon: 'download', wait: false },
 ]
 
 const installSteps = [

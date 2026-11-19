@@ -16,7 +16,7 @@
             <AppIcon name="award" :size="16" /> Download SwychPe
           </router-link>
         </div>
-        <p class="store-wait">SwychPe is live on Google Play  &amp; App Store listing is  awaiting approval.</p>
+        <p class="store-wait">SwychPe is live on Google Play  &amp; App Store </p>
       </div>
 
       <div v-for="col in columns" :key="col.title" class="f-col">
